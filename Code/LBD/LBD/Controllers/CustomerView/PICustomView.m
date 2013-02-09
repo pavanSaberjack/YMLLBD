@@ -18,6 +18,7 @@
     
     NSUInteger selectedIndex;
     NSUInteger previousIndex;
+    NSUInteger selectedComponent;
     
     ScrollCarouselView *scrollCarouselView;
 }
@@ -42,6 +43,7 @@
         
         selectedIndex = -1;
         previousIndex = -1;
+        selectedComponent = -1;
         
         [self createTheView];
         
@@ -96,11 +98,12 @@
     PICustomCell *cell = (PICustomCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
-        cell = [[PICustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[[PICustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
         [cell setDelegate:self];
         [cell setDataSource:self];
         [cell createTheView];
     }    
+    
     
     [cell setCellIndexPath:indexPath];
     
@@ -108,6 +111,12 @@
     
     if (selectedIndex == indexPath.row) {
         [cell addTheCarouselToCell:scrollCarouselView];
+    }
+    else
+    {
+        if ([scrollCarouselView superview]) {
+            [cell removeCarousel:scrollCarouselView];
+        }
     }
     
     return cell;
@@ -134,10 +143,9 @@
     
     if (selectedIndex == indexPath.row)
     {
-        
-        
         previousIndex = -1;
         selectedIndex = -1;
+        selectedComponent = -1;
         
         [venderTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:indexPath.row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
     }
@@ -145,16 +153,22 @@
     {
         previousIndex = selectedIndex;
         selectedIndex = indexPath.row;
+        selectedComponent = component;
         
         NSArray *indexPathArray;
         
-        if (previousIndex != -1) indexPathArray = @[[NSIndexPath indexPathForRow:selectedIndex inSection:0], [NSIndexPath indexPathForRow:previousIndex inSection:0]];
+        if (previousIndex != -1) indexPathArray = @[[NSIndexPath indexPathForRow:previousIndex inSection:0], [NSIndexPath indexPathForRow:selectedIndex inSection:0]];
         else indexPathArray = @[[NSIndexPath indexPathForRow:selectedIndex inSection:0]];
         
         [venderTableView reloadRowsAtIndexPaths:indexPathArray withRowAnimation:UITableViewRowAnimationNone];
         
         [venderTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }
+    
+    NSArray *visibleCellsArray = [venderTableView visibleCells];
+    for (PICustomCell *cell in visibleCellsArray) {
+        [cell fadeCellsWithSelectedIndex:selectedIndex forComponent:selectedComponent];
+    }    
     
 //    [venderTableView reloadData];
 }
@@ -167,6 +181,8 @@
 
 - (void)didScrollToItemAtIndex:(NSInteger)itemIndex
 {
+    NSLog(@"selected product index %d", itemIndex);
+    
     
 }
 

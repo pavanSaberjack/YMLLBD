@@ -18,6 +18,10 @@
 - (void)createTheView;
 - (void)createTheCellWithViews:(NSArray *)objects;
 - (void)addTheCarouselToCell:(id)carouselView;
+- (void)removeCarousel:(id)carouselView;
+- (void) fadeCellsWithSelectedIndex:(NSUInteger)selectedIndex forComponent:(NSUInteger)selectedComponent;
+- (void)clearState;
+- (void)fadeViews;
 @end
 
 @protocol PICustomCellDelegate <NSObject>
