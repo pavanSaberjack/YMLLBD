@@ -47,6 +47,13 @@
 		1BBD364616C5FD5000BB9ACF /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBD364016C5FD5000BB9ACF /* SBJsonWriter.m */; };
 		1BBD364B16C5FDEA00BB9ACF /* LBDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBD364A16C5FDEA00BB9ACF /* LBDUser.m */; };
 		1BBD364F16C6063B00BB9ACF /* LBDHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBD364E16C6063B00BB9ACF /* LBDHomeViewController.m */; };
+		58F7BC7F16C645CE0049141A /* PICustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BC7A16C645CE0049141A /* PICustomButton.m */; };
+		58F7BC8016C645CE0049141A /* PICustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BC7C16C645CE0049141A /* PICustomCell.m */; };
+		58F7BC8116C645CE0049141A /* ScrollCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BC7E16C645CE0049141A /* ScrollCarouselView.m */; };
+		58F7BC8416C645DE0049141A /* PICustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BC8316C645DE0049141A /* PICustomView.m */; };
+		58F7BC8E16C646A10049141A /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BC8D16C646A10049141A /* iCarousel.m */; };
+		58F7BC9016C646CD0049141A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F7BC8F16C646CD0049141A /* QuartzCore.framework */; };
+		58F7BC9316C648250049141A /* LBDCustomerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BC9216C648250049141A /* LBDCustomerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +133,19 @@
 		1BBD364A16C5FDEA00BB9ACF /* LBDUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDUser.m; sourceTree = "<group>"; };
 		1BBD364D16C6063B00BB9ACF /* LBDHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDHomeViewController.h; sourceTree = "<group>"; };
 		1BBD364E16C6063B00BB9ACF /* LBDHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDHomeViewController.m; sourceTree = "<group>"; };
+		58F7BC7916C645CE0049141A /* PICustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICustomButton.h; sourceTree = "<group>"; };
+		58F7BC7A16C645CE0049141A /* PICustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PICustomButton.m; sourceTree = "<group>"; };
+		58F7BC7B16C645CE0049141A /* PICustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICustomCell.h; sourceTree = "<group>"; };
+		58F7BC7C16C645CE0049141A /* PICustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PICustomCell.m; sourceTree = "<group>"; };
+		58F7BC7D16C645CE0049141A /* ScrollCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollCarouselView.h; sourceTree = "<group>"; };
+		58F7BC7E16C645CE0049141A /* ScrollCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollCarouselView.m; sourceTree = "<group>"; };
+		58F7BC8216C645DE0049141A /* PICustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICustomView.h; sourceTree = "<group>"; };
+		58F7BC8316C645DE0049141A /* PICustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PICustomView.m; sourceTree = "<group>"; };
+		58F7BC8C16C646A10049141A /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		58F7BC8D16C646A10049141A /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		58F7BC8F16C646CD0049141A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		58F7BC9116C648250049141A /* LBDCustomerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDCustomerViewController.h; sourceTree = "<group>"; };
+		58F7BC9216C648250049141A /* LBDCustomerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDCustomerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F7BC9016C646CD0049141A /* QuartzCore.framework in Frameworks */,
 				1BBD35C216C5A9CE00BB9ACF /* UIKit.framework in Frameworks */,
 				1BBD35C416C5A9CE00BB9ACF /* Foundation.framework in Frameworks */,
 				1BBD35C616C5A9CE00BB9ACF /* CoreGraphics.framework in Frameworks */,
@@ -162,6 +183,7 @@
 		1BBD35C016C5A9CE00BB9ACF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58F7BC8F16C646CD0049141A /* QuartzCore.framework */,
 				1BBD35C116C5A9CE00BB9ACF /* UIKit.framework */,
 				1BBD35C316C5A9CE00BB9ACF /* Foundation.framework */,
 				1BBD35C516C5A9CE00BB9ACF /* CoreGraphics.framework */,
@@ -202,6 +224,7 @@
 		1BBD35DE16C5ABDB00BB9ACF /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				58F7BC6F16C645500049141A /* CustomerView */,
 				1BBD364C16C6063B00BB9ACF /* Home */,
 			);
 			name = ViewComponents;
@@ -377,6 +400,33 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		58F7BC6F16C645500049141A /* CustomerView */ = {
+			isa = PBXGroup;
+			children = (
+				58F7BC8B16C646A10049141A /* iCarousel */,
+				58F7BC8216C645DE0049141A /* PICustomView.h */,
+				58F7BC8316C645DE0049141A /* PICustomView.m */,
+				58F7BC7916C645CE0049141A /* PICustomButton.h */,
+				58F7BC7A16C645CE0049141A /* PICustomButton.m */,
+				58F7BC7B16C645CE0049141A /* PICustomCell.h */,
+				58F7BC7C16C645CE0049141A /* PICustomCell.m */,
+				58F7BC7D16C645CE0049141A /* ScrollCarouselView.h */,
+				58F7BC7E16C645CE0049141A /* ScrollCarouselView.m */,
+				58F7BC9116C648250049141A /* LBDCustomerViewController.h */,
+				58F7BC9216C648250049141A /* LBDCustomerViewController.m */,
+			);
+			path = CustomerView;
+			sourceTree = "<group>";
+		};
+		58F7BC8B16C646A10049141A /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				58F7BC8C16C646A10049141A /* iCarousel.h */,
+				58F7BC8D16C646A10049141A /* iCarousel.m */,
+			);
+			path = iCarousel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -475,6 +525,12 @@
 				1BBD364616C5FD5000BB9ACF /* SBJsonWriter.m in Sources */,
 				1BBD364B16C5FDEA00BB9ACF /* LBDUser.m in Sources */,
 				1BBD364F16C6063B00BB9ACF /* LBDHomeViewController.m in Sources */,
+				58F7BC7F16C645CE0049141A /* PICustomButton.m in Sources */,
+				58F7BC8016C645CE0049141A /* PICustomCell.m in Sources */,
+				58F7BC8116C645CE0049141A /* ScrollCarouselView.m in Sources */,
+				58F7BC8416C645DE0049141A /* PICustomView.m in Sources */,
+				58F7BC8E16C646A10049141A /* iCarousel.m in Sources */,
+				58F7BC9316C648250049141A /* LBDCustomerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,7 +618,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LBD/LBD-Prefix.pch";
 				INFOPLIST_FILE = "LBD/LBD-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "522E7C75-D530-4F90-8C06-4223179F31CE";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "522E7C75-D530-4F90-8C06-4223179F31CE";
@@ -578,7 +634,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LBD/LBD-Prefix.pch";
 				INFOPLIST_FILE = "LBD/LBD-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "522E7C75-D530-4F90-8C06-4223179F31CE";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "522E7C75-D530-4F90-8C06-4223179F31CE";
@@ -605,6 +661,7 @@
 				1BBD35DD16C5A9CE00BB9ACF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

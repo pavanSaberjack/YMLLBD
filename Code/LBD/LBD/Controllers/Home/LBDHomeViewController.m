@@ -9,6 +9,7 @@
 #import "LBDHomeViewController.h"
 #import "LinkedInLoginService.h"
 #import "MBProgressHUD.h"
+#import "LBDCustomerViewController.h"
 
 @interface LBDHomeViewController ()
 {
@@ -58,6 +59,12 @@
     [MBProgressHUD hideHUDForView:[[UIApplication sharedApplication] keyWindow] animated:YES];
     currentUser = (LBDUser *)userInfo;
     NSLog(@"loggedIN - %@", currentUser);
+    
+    // Push Customer View
+    LBDCustomerViewController *customer = [[LBDCustomerViewController alloc] init];
+    [self.navigationController pushViewController:customer animated:YES];
+    
+    
     //[self downloadImage]; 
 }
 
