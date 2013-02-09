@@ -62,7 +62,7 @@
     scrollCarousel.scrollSpeed=0.66f;
     scrollCarousel.decelerationRate=0.36f;
     [self addSubview:scrollCarousel];
-    scrollCarousel.type = iCarouselTypeCoverFlow;
+    scrollCarousel.type = iCarouselTypeLinear;
     //[self performSelector:@selector(delaySelect) withObject:nil afterDelay:0.3];
 }
 
@@ -93,7 +93,9 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button setTitle:[NSString stringWithFormat:@"%d",index] forState:UIControlStateNormal];
     [button setFrame:CGRectMake(0, 0, 120, 120)];
-
+    [button setTag:(index + 2000)];
+    [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
     return button;
 }
 
@@ -150,5 +152,10 @@
     }
     
     return objectsArray;
+}
+
+- (void)buttonClicked:(UIButton *)sender
+{
+    [self.scrollCarouselDelegate selectedProductAtIndex:(sender.tag - 2000)];
 }
 @end

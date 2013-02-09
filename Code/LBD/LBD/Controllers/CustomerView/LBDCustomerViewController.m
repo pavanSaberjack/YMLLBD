@@ -9,7 +9,7 @@
 #import "LBDCustomerViewController.h"
 #import "PICustomView.h"
 
-@interface LBDCustomerViewController ()
+@interface LBDCustomerViewController ()<PICustomViewDelegate>
 
 @end
 
@@ -29,6 +29,7 @@
     [super viewDidLoad];
     
     PICustomView *customView = [[PICustomView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+    [customView setDelegate:self];
     [self.view addSubview:customView];
     [customView release];
     
@@ -44,5 +45,11 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft);
+}
+
+#pragma mark - PICustomViewDelegate methods
+- (void)productSelectedAtIndexPath:(NSUInteger)rowIndex withVendorIndex:(NSUInteger)verdorIndex withProductIndex:(NSUInteger)productIndex
+{
+    NSLog(@"%d, %d, %d",rowIndex, verdorIndex, productIndex);
 }
 @end

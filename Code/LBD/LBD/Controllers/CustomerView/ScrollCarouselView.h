@@ -12,7 +12,7 @@
 @protocol ScrollCarouselViewDelegate <NSObject>
 
 - (void)didScrollToItemAtIndex:(NSInteger)itemIndex;
-
+- (void)selectedProductAtIndex:(NSUInteger)productIndex;
 @optional
 - (void)willBeginDraggingAtIndex:(NSInteger)itemIndex;
 - (void)swipeToRightFromIndex:(NSInteger)itemIndex;

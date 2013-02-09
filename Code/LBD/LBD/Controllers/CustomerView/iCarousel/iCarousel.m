@@ -1492,12 +1492,12 @@ NSComparisonResult compareViewDepth(UIView *view1, UIView *view2, iCarousel *sel
 
 - (void)scrollToItemAtIndex:(NSInteger)index duration:(NSTimeInterval)duration
 {
-    [self scrollToOffset:index duration:duration];
+//    [self scrollToOffset:index duration:duration];
 }
 
 - (void)scrollToItemAtIndex:(NSInteger)index animated:(BOOL)animated
 {   
-    [self scrollToItemAtIndex:index duration:animated? SCROLL_DURATION: 0];
+//    [self scrollToItemAtIndex:index duration:animated? SCROLL_DURATION: 0];
 }
 
 - (void)removeItemAtIndex:(NSInteger)index animated:(BOOL)animated

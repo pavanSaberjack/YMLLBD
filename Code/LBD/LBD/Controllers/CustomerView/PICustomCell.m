@@ -54,11 +54,6 @@
     [self setClipsToBounds:YES];
     [self setAutoresizesSubviews:YES];
     
-    
-    
-    
-    NSLog(@"%@", [NSValue valueWithCGRect:self.contentView.frame]);
-    
     int numberOfViews = [self.dataSource numberOfComponentsForRowIndexPath:self.cellIndexPath];
     
     CGFloat width = 1024.00 / numberOfViews;
@@ -71,9 +66,7 @@
         [customButton setBackgroundColor:[UIColor blueColor]];
         [customButton setTag:(1000 + i)];
         [customButton addTarget:self action:@selector(componentClicked:) forControlEvents:UIControlEventTouchUpInside];
-        
-        NSLog(@"%@", NSStringFromCGRect(customButton.frame));
-        
+                
         [self.contentView addSubview:customButton];
         
         x += width;

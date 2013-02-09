@@ -9,6 +9,7 @@
 #import "PICustomView.h"
 #import "PICustomCell.h"
 #import "ScrollCarouselView.h"
+#import "LBDProductViewController.h"
 
 #define NUMBER_OF_COMPONENTS 3
 
@@ -138,9 +139,7 @@
 
 #pragma mark - PICustomCellDelegate methods
 - (void)cellButtonClickedAtIndexPath:(NSIndexPath *)indexPath forComponent:(NSUInteger)component
-{
-    NSLog(@"Clicked Button %d, %@", component, indexPath);
-    
+{    
     if (selectedIndex == indexPath.row)
     {
         previousIndex = -1;
@@ -179,11 +178,16 @@
     return 3;
 }
 
+#pragma mark - ScrollCarouselViewDelegate methods
 - (void)didScrollToItemAtIndex:(NSInteger)itemIndex
 {
     NSLog(@"selected product index %d", itemIndex);
-    
-    
 }
 
+- (void)selectedProductAtIndex:(NSUInteger)productIndex
+{
+    // Call the product view from here
+    
+    [self.delegate productSelectedAtIndexPath:selectedIndex withVendorIndex:(selectedComponent-1000) withProductIndex:productIndex];
+}
 @end

@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol PICustomViewDelegate;
 
 @interface PICustomView : UIView
+@property (nonatomic, assign)id<PICustomViewDelegate>delegate;
+@end
+
+@protocol PICustomViewDelegate <NSObject>
+
+- (void)productSelectedAtIndexPath:(NSUInteger)rowIndex withVendorIndex:(NSUInteger)verdorIndex withProductIndex:(NSUInteger)productIndex;
 
 @end
