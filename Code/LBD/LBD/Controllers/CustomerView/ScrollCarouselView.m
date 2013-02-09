@@ -56,6 +56,7 @@
 {
     scrollCarousel = [[iCarousel alloc] initWithFrame:CGRectMake(0,0,1024,self.frame.size.height)];
     scrollCarousel.dataSource = self;
+    scrollCarousel.delegate = self;
     scrollCarousel.contentOffset = customContentOffset;
     scrollCarousel.backgroundColor = [UIColor clearColor];
     scrollCarousel.scrollSpeed=0.66f;
@@ -98,7 +99,7 @@
 
 - (float)carouselItemWidth:(iCarousel *)carousel
 {
-    return 400;
+    return 200;
 }
 
 - (void)carouselWillBeginScrollingAnimation:(iCarousel *)carousel

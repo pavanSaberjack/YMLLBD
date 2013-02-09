@@ -77,7 +77,7 @@
     CGRect pageRect = CGRectMake(0.0f, 48.0f, self.frame.size.width, 100);
     CGRect imageRect = CGRectMake(0, 0, 100, 100);
     
-    scrollCarouselView = [[ScrollCarouselView alloc] initWithFrame:pageRect withViewFrame:imageRect withContentOffset:CGSizeZero needTap:YES];
+    scrollCarouselView = [[ScrollCarouselView alloc] initWithFrame:pageRect withViewFrame:imageRect withContentOffset:CGSizeMake(-360, 0) needTap:YES];
     
     scrollCarouselView.scrollCarouselDelegate = self;
     scrollCarouselView.backgroundColor = [UIColor clearColor];
@@ -163,6 +163,11 @@
 - (NSUInteger)numberOfComponentsForRowIndexPath:(NSIndexPath *)indexPath
 {
     return 3;
+}
+
+- (void)didScrollToItemAtIndex:(NSInteger)itemIndex
+{
+    
 }
 
 @end
