@@ -16,6 +16,6 @@
 
 @protocol LBDCustomPopUpViewDelegate <NSObject>
 
-- (void)continueButtonClickedForCoordinate:(CGPoint)point;
+- (void)continueButtonClickedForCoordinate:(CGPoint)point forView:(id)view;
 
 @end
