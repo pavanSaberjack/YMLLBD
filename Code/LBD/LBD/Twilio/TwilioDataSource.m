@@ -22,7 +22,6 @@ typedef void(^TCUnlink)(void);
 @property (nonatomic, strong)NSString *capabilityToken;
 @property (nonatomic, strong)AudioStreamer *streamer;
 @property (nonatomic, strong)NSString *userName;
-@property (nonatomic, strong)NSURLConnection *capabilityTokenConnection;
 @property (nonatomic, strong)TCDevice *device;
 @property (nonatomic, strong)TCConnection *deviceConnection;
 @property (nonatomic, assign)TCUnlink unlink;
@@ -40,6 +39,14 @@ typedef void(^TCUnlink)(void);
         _needUrl = YES;
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [_device  release];
+    [_deviceConnection  release];
+    
+    [super dealloc];
 }
 
 - (void)getDevice
@@ -86,8 +93,8 @@ typedef void(^TCUnlink)(void);
         if (httpResponse.statusCode == 200)
         {
             NSString* capabilityToken =
-            [[NSString alloc] initWithData:data
-                                  encoding:NSUTF8StringEncoding];
+            [[[NSString alloc] initWithData:data
+                                  encoding:NSUTF8StringEncoding] autorelease];
             
             self.capabilityToken = capabilityToken;
             [self getDevice];
@@ -123,8 +130,8 @@ typedef void(^TCUnlink)(void);
         if (httpResponse.statusCode == 200)
         {
             NSString* url =
-            [[NSString alloc] initWithData:data
-                                  encoding:NSUTF8StringEncoding];
+            [[[NSString alloc] initWithData:data
+                                  encoding:NSUTF8StringEncoding] autorelease];
             
             return url;
         }
@@ -258,6 +265,7 @@ typedef void(^TCUnlink)(void);
          object:self.streamer];
 		
 		[self.streamer stop];
+        [self.streamer release];
 		self.streamer = nil;
 	}
 }

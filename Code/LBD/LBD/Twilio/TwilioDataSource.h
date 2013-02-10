@@ -18,11 +18,6 @@
 -(id)initWithUserName:(NSString *)userName;
 
 /*
- init the device
- */
-- (void)initDevice;
-
-/*
  getting the audio file and the video file
  */
 
