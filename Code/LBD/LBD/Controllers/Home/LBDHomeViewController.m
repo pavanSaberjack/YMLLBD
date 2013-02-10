@@ -39,7 +39,7 @@
 
 -(void)downloadImage //NS: store the image also -- downloading each time right now
 {
-    UIImageView *profileImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width-100.0, 10.0, 80.0, 80.0)];
+    UIImageView *profileImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width-90.0, 10.0, 80.0, 80.0)];
     
     CALayer *layer2 = [profileImage layer];
     [layer2 setShadowOffset:CGSizeMake(0.0, 2.0)];
@@ -138,23 +138,31 @@
 
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO];
-}
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    [self.navigationController setNavigationBarHidden:YES];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated
+//{
+//    [super viewWillDisappear:animated];
+//    [self.navigationController setNavigationBarHidden:NO];
+//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
+    self.title = @"Login";
+    
     [self.view setBackgroundColor:[UIColor whiteColor]];
+
+//    UIImageView *bgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.height, self.view.frame.size.width)];
+//    [bgView setImage:[UIImage imageNamed:@"blackBG"]];
+//    [bgView setUserInteractionEnabled:YES];
+//    [self.view addSubview:bgView];
+//    [bgView release];
     
     UIImage *loginImg = [UIImage imageNamed:@"login_with_linkedin"];
     NSLog(@"%f, %f", self.view.frame.size.width, self.view.frame.size.height);
@@ -162,6 +170,7 @@
                                                                     self.view.frame.size.width/2+50.0,
                                                                     loginImg.size.width,
                                                                     loginImg.size.height)];
+    
     [loginBtn setImage:loginImg forState:UIControlStateNormal];
     [loginBtn addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:loginBtn];
