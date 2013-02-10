@@ -20,6 +20,8 @@
 		1B24A9B816C7714D007B19E0 /* blackBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B24A9B716C7714D007B19E0 /* blackBG@2x.png */; };
 		1B24A9BA16C77150007B19E0 /* searchGlass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B24A9B916C77150007B19E0 /* searchGlass@2x.png */; };
 		1B24A9BC16C773A6007B19E0 /* login_with_linkedin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B24A9BB16C773A6007B19E0 /* login_with_linkedin@2x.png */; };
+		1B77182E16C78494004192F5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B77182D16C78494004192F5 /* CoreLocation.framework */; };
+		1B77183316C786B3004192F5 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B77183216C786B3004192F5 /* APIManager.m */; };
 		1BBC58EE16C752720058F00B /* LBDCreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC58ED16C752720058F00B /* LBDCreateGroupViewController.m */; };
 		1BBC58FA16C753240058F00B /* UIImage+ProportionalFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC58F916C753240058F00B /* UIImage+ProportionalFill.m */; };
 		1BBC58FE16C753290058F00B /* WebImageOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC58FD16C753290058F00B /* WebImageOperations.m */; };
@@ -120,6 +122,9 @@
 		1B24A9B716C7714D007B19E0 /* blackBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackBG@2x.png"; sourceTree = "<group>"; };
 		1B24A9B916C77150007B19E0 /* searchGlass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchGlass@2x.png"; sourceTree = "<group>"; };
 		1B24A9BB16C773A6007B19E0 /* login_with_linkedin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_with_linkedin@2x.png"; sourceTree = "<group>"; };
+		1B77182D16C78494004192F5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1B77183116C786B3004192F5 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		1B77183216C786B3004192F5 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		1BBC58EC16C752720058F00B /* LBDCreateGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDCreateGroupViewController.h; sourceTree = "<group>"; };
 		1BBC58ED16C752720058F00B /* LBDCreateGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDCreateGroupViewController.m; sourceTree = "<group>"; };
 		1BBC58F816C753240058F00B /* UIImage+ProportionalFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ProportionalFill.h"; sourceTree = "<group>"; };
@@ -253,6 +258,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B77182E16C78494004192F5 /* CoreLocation.framework in Frameworks */,
 				1796D3C716C72C6C00A91849 /* AudioToolbox.framework in Frameworks */,
 				1796D3BC16C72AB300A91849 /* SystemConfiguration.framework in Frameworks */,
 				1796D3BA16C72AAB00A91849 /* AVFoundation.framework in Frameworks */,
@@ -296,6 +302,15 @@
 			path = Twilio/Headers;
 			sourceTree = "<group>";
 		};
+		1B77183016C785D9004192F5 /* NetworkAPIManaer */ = {
+			isa = PBXGroup;
+			children = (
+				1B77183116C786B3004192F5 /* APIManager.h */,
+				1B77183216C786B3004192F5 /* APIManager.m */,
+			);
+			path = NetworkAPIManaer;
+			sourceTree = "<group>";
+		};
 		1BBC58F716C753240058F00B /* Image_Scaling */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +349,7 @@
 		1BBD35C016C5A9CE00BB9ACF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1B77182D16C78494004192F5 /* CoreLocation.framework */,
 				1796D3C616C72C6C00A91849 /* AudioToolbox.framework */,
 				1796D3BB16C72AB300A91849 /* SystemConfiguration.framework */,
 				1796D3B916C72AAB00A91849 /* AVFoundation.framework */,
@@ -484,6 +500,7 @@
 		1BBD362916C5FB5A00BB9ACF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				1B77183016C785D9004192F5 /* NetworkAPIManaer */,
 				1BBC58FB16C753290058F00B /* Image_Downloader */,
 				1BBD362A16C5FB5A00BB9ACF /* Login */,
 			);
@@ -804,6 +821,7 @@
 				1BBC58EE16C752720058F00B /* LBDCreateGroupViewController.m in Sources */,
 				1BBC58FA16C753240058F00B /* UIImage+ProportionalFill.m in Sources */,
 				1BBC58FE16C753290058F00B /* WebImageOperations.m in Sources */,
+				1B77183316C786B3004192F5 /* APIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
