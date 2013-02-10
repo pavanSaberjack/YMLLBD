@@ -182,7 +182,7 @@
     
     
     LBDCustomPopUpView *popUp = [[LBDCustomPopUpView alloc] initWithFrame:CGRectMake(0, 0, 300, 250)];
-    [popUp setBackgroundColor:[UIColor blackColor]];
+//    [popUp setBackgroundColor:[UIColor blackColor]];
     [popUp setCenter:pointInView];
     [popUp setDelegate:self];
     [superView addSubview:popUp];
@@ -352,7 +352,7 @@
         if(self.latestVoiceUrl && [self.latestVoiceUrl length]>0)
             [self.datasource listenAudio:[NSURL URLWithString:self.latestVoiceUrl]];
     }
-     [view removeFromSuperview];
+//     [view removeFromSuperview];
 }
 
 #pragma mark - Twilio datasource delegate
