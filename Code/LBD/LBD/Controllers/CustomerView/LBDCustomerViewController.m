@@ -16,6 +16,8 @@
 
 @implementation LBDCustomerViewController
 
+@synthesize title;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -57,4 +59,11 @@
     [self.navigationController pushViewController:productView animated:YES];
     [productView release];
 }
+
+- (void)dealloc
+{
+    self.title = nil;
+    [super dealloc];
+}
+
 @end

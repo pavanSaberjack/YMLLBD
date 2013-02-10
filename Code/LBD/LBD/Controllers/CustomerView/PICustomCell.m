@@ -8,6 +8,7 @@
 
 #import "PICustomCell.h"
 #import "PICustomButton.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface PICustomCell()
 
@@ -60,12 +61,19 @@
     CGFloat x = 80.0f;
     CGFloat y = 20.0f;
     
-    for (int i = 0; i < numberOfViews; i++) {
+    for (int i = 0; i < numberOfViews; i++)
+    {
         PICustomButton *customButton = [PICustomButton buttonWithType:UIButtonTypeCustom];
         [customButton setFrame:CGRectMake(x, y, 150, 150)];
-        [customButton setBackgroundColor:[UIColor blueColor]];
+        [customButton setBackgroundColor:[UIColor whiteColor]];
         [customButton setTag:(1000 + i)];
         [customButton addTarget:self action:@selector(componentClicked:) forControlEvents:UIControlEventTouchUpInside];
+        
+        CALayer *layer2 = [customButton layer];
+        [layer2 setShadowOffset:CGSizeMake(0.0, 3.0)];
+        [layer2 setShadowColor:[UIColor colorWithRed:(150/255.f) green:(150/255.f) blue:(150/255.f) alpha:1.0].CGColor];
+        [layer2 setShadowRadius:3.0];
+        [layer2 setShadowOpacity:1.0];
                 
         [self.contentView addSubview:customButton];
         
@@ -91,8 +99,6 @@
     } completion:^(BOOL finished) {
 //        [carouselView removeFromSuperview];
     }];
-    
-    
 }
 
 - (void) fadeCellsWithSelectedIndex:(NSUInteger)selectedIndex forComponent:(NSUInteger)selectedComponent

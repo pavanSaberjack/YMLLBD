@@ -98,14 +98,14 @@
     
     PICustomCell *cell = (PICustomCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    if (cell == nil) {
+    if (cell == nil)
+    {
         cell = [[[PICustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
         [cell setDelegate:self];
         [cell setDataSource:self];
         [cell createTheView];
     }    
-    
-    
+        
     [cell setCellIndexPath:indexPath];
     
     // use NUMBER of components Value get array and send for creation

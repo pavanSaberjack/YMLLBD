@@ -24,11 +24,7 @@
 
 - (void)createTheView
 {
-    PICustomButton *closeButton = [PICustomButton buttonWithType:UIButtonTypeCustom];
-    [closeButton setFrame:CGRectMake(self.frame.size.width - 20, 2, 20, 20)];
-    [closeButton setBackgroundColor:[UIColor blackColor]];
-    [closeButton addTarget:self action:@selector(remove) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:closeButton];
+    
     
     
     UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(2, 25, self.frame.size.width, 50)];
@@ -38,8 +34,15 @@
     [lbl setNumberOfLines:2];
     [self addSubview:lbl];
     
+    
+    PICustomButton *closeButton = [PICustomButton buttonWithType:UIButtonTypeCustom];
+    [closeButton setFrame:CGRectMake(self.center.x - 100, self.frame.size.height- 35, 80, 30)];
+    [closeButton setBackgroundColor:[UIColor blueColor]];
+    [closeButton addTarget:self action:@selector(remove) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:closeButton];
+    
     PICustomButton *continueButton = [PICustomButton buttonWithType:UIButtonTypeCustom];
-    [continueButton setFrame:CGRectMake(self.center.x - 40, self.frame.size.height- 35, 80, 30)];
+    [continueButton setFrame:CGRectMake(self.center.x + 40, self.frame.size.height- 35, 80, 30)];
     [continueButton setBackgroundColor:[UIColor greenColor]];
     [continueButton setTitle:@"OK" forState:UIControlStateNormal];
     [continueButton addTarget:self action:@selector(continueClicked) forControlEvents:UIControlEventTouchUpInside];
@@ -53,7 +56,7 @@
 
 - (void)continueClicked
 {
-    [self.delegate continueButtonClickedForCoordinate:self.center];
+    [self.delegate continueButtonClickedForCoordinate:self.center forView:self.superview];
     
     [self removeFromSuperview];
 }

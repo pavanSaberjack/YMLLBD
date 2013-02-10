@@ -54,6 +54,12 @@
 
 -(void)createCarouselScroll
 {
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0,-20,1024,self.frame.size.height+40)];
+    [bgView setBackgroundColor:[UIColor blackColor]];
+    [bgView setAlpha:0.1];
+    [self addSubview:bgView];
+    [bgView release];
+    
     scrollCarousel = [[iCarousel alloc] initWithFrame:CGRectMake(0,0,1024,self.frame.size.height)];
     scrollCarousel.dataSource = self;
     scrollCarousel.delegate = self;
