@@ -200,6 +200,11 @@
         self.datasource.dataSourceDelegate = self;
         [self.datasource recordQuerys];
     }
+    else
+    {
+        [self getVendorQuestions];
+        [self.datasource listenAudio:[NSURL URLWithString:self.latestVoiceUrl]];
+    }
     
 }
 
@@ -409,7 +414,11 @@
     {
         SBJsonParser *parser = [[SBJsonParser alloc]init];
         NSMutableDictionary *dictionary = [parser objectWithString:str];
-        self.latestVoiceUrl = [NSString stringWithFormat:@"%@",[dictionary[@"qa_client"] objectForKey:@"question_audio_url"]] ;
+        if([dictionary count]>0)
+        {
+            NSArray *array  = dictionary[@"qa_client"];
+            self.latestVoiceUrl = [NSString stringWithFormat:@"%@",[[array objectAtIndex:[array count]-1] objectForKey:@"question_audio_url"]] ;
+        }
         NSLog(@"Hello");
     }
     
