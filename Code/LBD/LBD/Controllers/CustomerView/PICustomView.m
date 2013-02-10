@@ -107,12 +107,20 @@
     CGFloat y = 5.0f;
     
     for (int i = 0; i < 10; i++) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setBackgroundColor:[UIColor whiteColor]];
         [button setTitle:[NSString stringWithFormat:@"%d",i] forState:UIControlStateNormal];
         [button setFrame:CGRectMake(x, y, 120, 120)];
         [button setTag:(i + 2000)];
         [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
         [productScrollView addSubview:button];
+        
+        CALayer *layer2 = [button layer];
+        [layer2 setShadowOffset:CGSizeMake(0.0, 3.0)];
+        [layer2 setShadowColor:[UIColor colorWithRed:(150/255.f) green:(150/255.f) blue:(150/255.f) alpha:1.0].CGColor];
+        [layer2 setShadowRadius:3.0];
+        [layer2 setShadowOpacity:1.0];
+
         
         x += 140;
     }

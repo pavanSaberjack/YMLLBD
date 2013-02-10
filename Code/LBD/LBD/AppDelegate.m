@@ -11,7 +11,7 @@
 
 @implementation AppDelegate
 
-@synthesize storedImg;
+@synthesize storedArrOfImgs;
 
 - (void)dealloc
 {
@@ -21,6 +21,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.storedArrOfImgs = [NSMutableArray array];
+    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     

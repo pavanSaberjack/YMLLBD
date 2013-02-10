@@ -16,6 +16,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (nonatomic, retain) UIImage *storedImg;
+@property (nonatomic, retain) NSMutableArray *storedArrOfImgs;
 
 @end
