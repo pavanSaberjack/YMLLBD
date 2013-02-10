@@ -22,6 +22,8 @@
     NSUInteger selectedComponent;
     
     ScrollCarouselView *scrollCarouselView;
+    
+    UIScrollView *productScrollView;
 }
 @end
 
@@ -77,13 +79,40 @@
 
 - (void)createCarouselView
 {
-    CGRect pageRect = CGRectMake(0.0f, 48.0f, self.frame.size.width, 100);
-    CGRect imageRect = CGRectMake(0, 0, 100, 100);
+    CGRect pageRect = CGRectMake(0.0f, 220.0f, 1024, 150);
+//    CGRect imageRect = CGRectMake(0, 0, 100, 100);
+            
+    productScrollView = [[UIScrollView alloc] initWithFrame:pageRect];
+    [productScrollView setDelegate:self];
+    [productScrollView setBounces:YES];
+    [productScrollView setShowsHorizontalScrollIndicator:NO];
+    [productScrollView setBackgroundColor:[UIColor clearColor]];
     
-    scrollCarouselView = [[ScrollCarouselView alloc] initWithFrame:pageRect withViewFrame:imageRect withContentOffset:CGSizeMake(-360, 0) needTap:YES];
+}
+
+- (void)addProductsForScroll:(NSArray *)productsArray
+{
+    for (id view in productScrollView.subviews) {
+        if ([view isKindOfClass:[UIButton class]]) {
+            [view removeFromSuperview];
+        }
+    }
     
-    scrollCarouselView.scrollCarouselDelegate = self;
-    scrollCarouselView.backgroundColor = [UIColor clearColor];
+    CGFloat x = 60.0f;
+    CGFloat y = 5.0f;
+    
+    for (int i = 0; i < 10; i++) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [button setTitle:[NSString stringWithFormat:@"%d",i] forState:UIControlStateNormal];
+        [button setFrame:CGRectMake(x, y, 120, 120)];
+        [button setTag:(i + 2000)];
+        [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [productScrollView addSubview:button];
+        
+        x += 140;
+    }
+    
+    [productScrollView setContentSize:CGSizeMake(x, productScrollView.frame.size.height)];
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -111,12 +140,13 @@
     // use NUMBER of components Value get array and send for creation
     
     if (selectedIndex == indexPath.row) {
-        [cell addTheCarouselToCell:scrollCarouselView];
+        [self addProductsForScroll:nil];
+        [cell addTheCarouselToCell:productScrollView];
     }
     else
     {
         if ([scrollCarouselView superview]) {
-            [cell removeCarousel:scrollCarouselView];
+            [cell removeCarousel:productScrollView];
         }
     }
     
@@ -189,5 +219,11 @@
     // Call the product view from here
     
     [self.delegate productSelectedAtIndexPath:selectedIndex withVendorIndex:(selectedComponent-1000) withProductIndex:productIndex];
+}
+
+#pragma mark - Button clicked methods
+- (void)buttonClicked:(UIButton *)sender
+{
+    NSLog(@"selected product is at %d for component %d at row %d", sender.tag - 2000, selectedComponent - 1000, selectedIndex);
 }
 @end
