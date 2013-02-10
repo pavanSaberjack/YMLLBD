@@ -11,6 +11,8 @@
 
 @interface PICustomView : UIView
 @property (nonatomic, assign)id<PICustomViewDelegate>delegate;
+- (void)reloadTheViewWithVendorsArray:(NSArray *)verdorsArray;
+
 @end
 
 @protocol PICustomViewDelegate <NSObject>

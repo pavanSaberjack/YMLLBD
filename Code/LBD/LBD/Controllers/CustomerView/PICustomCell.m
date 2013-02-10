@@ -11,7 +11,9 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface PICustomCell()
-
+{
+    UIView *vendersView;
+}
 @end
 
 @implementation PICustomCell
@@ -21,6 +23,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        
+        vendersView = [[ UIView alloc] initWithFrame:CGRectMake(0, 0, 1024, 300)];
+        [self.contentView addSubview:vendersView];
     }
     return self;
 }
@@ -49,8 +54,13 @@
 //}
 
 #pragma mark - UI CreationMethod
-- (void)createTheView
+- (void)createTheViewWith:(NSArray *)vendorsList
 {
+    for (id view in [vendersView subviews]) {
+        [view removeFromSuperview];
+    }
+    
+    
     [self setSelectionStyle:UITableViewCellSelectionStyleNone];
     [self setClipsToBounds:YES];
     [self setAutoresizesSubviews:YES];
@@ -61,7 +71,7 @@
     CGFloat x = 80.0f;
     CGFloat y = 20.0f;
     
-    for (int i = 0; i < numberOfViews; i++)
+    for (int i = 0; i < [vendorsList count]; i++)
     {
         PICustomButton *customButton = [PICustomButton buttonWithType:UIButtonTypeCustom];
         [customButton setFrame:CGRectMake(x, y, 150, 150)];
@@ -74,12 +84,45 @@
         [layer2 setShadowColor:[UIColor colorWithRed:(150/255.f) green:(150/255.f) blue:(150/255.f) alpha:1.0].CGColor];
         [layer2 setShadowRadius:3.0];
         [layer2 setShadowOpacity:1.0];
-                
-        [self.contentView addSubview:customButton];
+        
+        [vendersView addSubview:customButton];
         
         x += width;
     }
+
 }
+
+//- (void)createTheView
+//{
+//    [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+//    [self setClipsToBounds:YES];
+//    [self setAutoresizesSubviews:YES];
+//    
+//    int numberOfViews = [self.dataSource numberOfComponentsForRowIndexPath:self.cellIndexPath];
+//    
+//    CGFloat width = 1024.00 / numberOfViews;
+//    CGFloat x = 80.0f;
+//    CGFloat y = 20.0f;
+//    
+//    for (int i = 0; i < numberOfViews; i++)
+//    {
+//        PICustomButton *customButton = [PICustomButton buttonWithType:UIButtonTypeCustom];
+//        [customButton setFrame:CGRectMake(x, y, 150, 150)];
+//        [customButton setBackgroundColor:[UIColor whiteColor]];
+//        [customButton setTag:(1000 + i)];
+//        [customButton addTarget:self action:@selector(componentClicked:) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        CALayer *layer2 = [customButton layer];
+//        [layer2 setShadowOffset:CGSizeMake(0.0, 3.0)];
+//        [layer2 setShadowColor:[UIColor colorWithRed:(150/255.f) green:(150/255.f) blue:(150/255.f) alpha:1.0].CGColor];
+//        [layer2 setShadowRadius:3.0];
+//        [layer2 setShadowOpacity:1.0];
+//                
+//        [self.contentView addSubview:customButton];
+//        
+//        x += width;
+//    }
+//}
 
 - (void)addTheCarouselToCell:(id)carouselView
 {
@@ -106,7 +149,7 @@
     int numberOfViews = [self.dataSource numberOfComponentsForRowIndexPath:self.cellIndexPath];
     
     for (int i = 0; i < numberOfViews; i++) {
-        id subview = [self.contentView viewWithTag:(1000 + i)];
+        id subview = [vendersView viewWithTag:(1000 + i)];
         
         if (![subview isKindOfClass:[PICustomButton class]]) {
             continue;
@@ -128,31 +171,6 @@
         }
     }
     
-}
-
-- (void)clearState
-{
-    int numberOfViews = [self.dataSource numberOfComponentsForRowIndexPath:self.cellIndexPath];
-    
-    for (int i = 0; i < numberOfViews; i++) {
-        PICustomButton *button = (PICustomButton *)[self.contentView viewWithTag:(1000 + i)];
-        
-
-            [button setAlpha:1.0];
-        
-    }
-}
-
-- (void)fadeViews {
-    int numberOfViews = [self.dataSource numberOfComponentsForRowIndexPath:self.cellIndexPath];
-    
-    for (int i = 0; i < numberOfViews; i++) {
-        PICustomButton *button = (PICustomButton *)[self.contentView viewWithTag:(1000 + i)];
-        
-        
-        [button setAlpha:0.2];
-        
-    }
 }
 
 #pragma mark - button Click methods
