@@ -8,12 +8,18 @@
 
 #import "LBDProductViewController.h"
 #import "LBDCustomPopUpView.h"
-@interface LBDProductViewController ()<LBDCustomPopUpViewDelegate, UIScrollViewDelegate>
+#import "TwilioDataSource.h"
+#import "JSON.h"
+
+@interface LBDProductViewController ()<LBDCustomPopUpViewDelegate, UIScrollViewDelegate, TwilioDataSourceDelegate>
 {
     UIScrollView *mainScroll, *sideScroll;
     UIImageView *logoView, *homebgView;
 
 }
+
+@property(nonatomic, strong)TwilioDataSource *datasource;
+
 @end
 
 @implementation LBDProductViewController
@@ -228,5 +234,39 @@
     UIImageView *img = (UIImageView *)view;
     
     NSLog(@"selected page %d", img.tag - 5000);
+    // Add Question at this co-ordinate
+    NSLog(@"Ask question for co-orduinate at %@", [NSValue valueWithCGPoint:point]);
+    
+    // allocate the data source and record the queries
+    if(!self.datasource)
+        self.datasource = [[TwilioDataSource alloc]initWithUserName:@"LBD"];
+    
+    self.datasource.dataSourceDelegate = self;
+    [self.datasource recordQuerys];
+    
+}
+
+#pragma mark - Twilio datasource delegate
+- (void)didReceiveRecordedUrl:(NSString *)url
+{
+    NSString *urlTobeSent = [url stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    NSDictionary *dict =@{@"question_audio_url":urlTobeSent,@"client_user_id":@"108099534"};
+    
+    NSData *postData = [[NSString stringWithFormat:@"data=%@",[dict JSONRepresentation]] dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    [request setURL:[NSURL URLWithString:@"http://192.168.1.94:3000/question_answers/add.json"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+    NSURLResponse *response;
+    NSError *err;
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+    //NSString *responseString = [[NSString alloc] initWithFormat:@"%@", responseData];
+    NSLog(@"responseData: %@", responseData);
 }
 @end
