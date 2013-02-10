@@ -9,6 +9,10 @@
 #import "PICustomCell.h"
 #import "PICustomButton.h"
 #import <QuartzCore/QuartzCore.h>
+#import "WebImageOperations.h"
+#import "UIImage+ProportionalFill.h"
+#import "MBProgressHUD.h"
+#import "AppDelegate.h"
 
 @interface PICustomCell()
 {
@@ -56,6 +60,7 @@
 #pragma mark - UI CreationMethod
 - (void)createTheViewWith:(NSArray *)vendorsList
 {
+    //NSLog(@"Cmonnn - %@", vendorsList);
     for (id view in [vendersView subviews]) {
         [view removeFromSuperview];
     }
@@ -77,7 +82,27 @@
         [customButton setFrame:CGRectMake(x, y, 150, 150)];
         [customButton setBackgroundColor:[UIColor whiteColor]];
         [customButton setTag:(1000 + i)];
+        [customButton setPID:[[[vendorsList objectAtIndex:i] objectAtIndex:0] intValue]];
         [customButton addTarget:self action:@selector(componentClicked:) forControlEvents:UIControlEventTouchUpInside];
+
+        NSLog(@"img download - %@", [[vendorsList objectAtIndex:i] objectAtIndex:2]);
+        if(![[[vendorsList objectAtIndex:i] objectAtIndex:2] isKindOfClass:[NSNull class]])
+        {
+            [MBProgressHUD showDimmedHUDAddedTo:customButton animated:NO];
+            [WebImageOperations processImageDataWithURLString:[[vendorsList objectAtIndex:i] objectAtIndex:2] andBlock:^(NSData *itemImageData) {
+                
+                [MBProgressHUD hideHUDForView:customButton animated:NO];
+                UIImage *itemImage = [UIImage imageWithData:itemImageData];
+                if(itemImage && itemImage.size.width!=0 && itemImage.size.height!=0)
+                {
+                    itemImage = [itemImage imageScaledToFitSize:itemImage.size];
+                    [customButton setImage:itemImage forState:UIControlStateNormal];
+                    [customButton setBackgroundColor:[UIColor clearColor]];
+                    AppDelegate *appDel = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+                    [appDel.storedArrOfImgs addObject:itemImage];
+                }
+            }];
+        }
         
         CALayer *layer2 = [customButton layer];
         [layer2 setShadowOffset:CGSizeMake(0.0, 3.0)];

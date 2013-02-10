@@ -11,6 +11,8 @@
 
 @implementation AppDelegate
 
+@synthesize storedArrOfImgs;
+
 - (void)dealloc
 {
     [_window release];
@@ -19,6 +21,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.storedArrOfImgs = [NSMutableArray array];
+    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     
@@ -49,13 +53,13 @@
 
 - (void)setupAppearance;
 {
-//    NSDictionary *titleFormat = @{UITextAttributeFont:[UIFont fontWithName:@"Helvetica-Bold" size:20]};
-//    
-//    //[[UINavigationBar appearance] setTintColor:[UIColor colorWithHue:0.2 saturation:0.8 brightness:0.6 alpha:1]];
-//    [[UINavigationBar appearance] setTintColor: [UIColor colorWithRed:38/255.f green:38/255.f blue:38/255.f alpha:1.0]];
-//    [[UINavigationBar appearance] setTitleTextAttributes: titleFormat];
-//    [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:2 forBarMetrics:UIBarMetricsDefault];
-//    [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:-1 forBarMetrics:UIBarMetricsLandscapePhone];
+    NSDictionary *titleFormat = @{UITextAttributeFont:[UIFont fontWithName:@"Helvetica-Bold" size:20]};
+    
+    //[[UINavigationBar appearance] setTintColor:[UIColor colorWithHue:0.2 saturation:0.8 brightness:0.6 alpha:1]];
+    [[UINavigationBar appearance] setTintColor: [UIColor colorWithRed:38/255.f green:38/255.f blue:38/255.f alpha:1.0]];
+    [[UINavigationBar appearance] setTitleTextAttributes: titleFormat];
+    [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:2 forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:-1 forBarMetrics:UIBarMetricsLandscapePhone];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

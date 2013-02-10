@@ -13,5 +13,8 @@ typedef void(^buttonBlock)();
 {
     buttonBlock _buttonClickedBlock;
 }
+
+@property (nonatomic, assign) int pID;
+
 - (void)handleControlEvents:(UIControlEvents)event forBlock:(buttonBlock)onClickBlock;
 @end
