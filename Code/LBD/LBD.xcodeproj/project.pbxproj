@@ -55,6 +55,8 @@
 		58F7BC9016C646CD0049141A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F7BC8F16C646CD0049141A /* QuartzCore.framework */; };
 		58F7BC9316C648250049141A /* LBDCustomerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BC9216C648250049141A /* LBDCustomerViewController.m */; };
 		58F7BCAC16C6BF800049141A /* LBDProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BCAB16C6BF800049141A /* LBDProductViewController.m */; };
+		58F7BCB316C71EB40049141A /* ActUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BCB216C71EB30049141A /* ActUtility.m */; };
+		58F7BCB616C720B80049141A /* LBDCustomPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BCB516C720B70049141A /* LBDCustomPopUpView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +151,10 @@
 		58F7BC9216C648250049141A /* LBDCustomerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDCustomerViewController.m; sourceTree = "<group>"; };
 		58F7BCAA16C6BF800049141A /* LBDProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDProductViewController.h; sourceTree = "<group>"; };
 		58F7BCAB16C6BF800049141A /* LBDProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDProductViewController.m; sourceTree = "<group>"; };
+		58F7BCB116C71EB30049141A /* ActUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActUtility.h; sourceTree = "<group>"; };
+		58F7BCB216C71EB30049141A /* ActUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActUtility.m; sourceTree = "<group>"; };
+		58F7BCB416C720B70049141A /* LBDCustomPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDCustomPopUpView.h; sourceTree = "<group>"; };
+		58F7BCB516C720B70049141A /* LBDCustomPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDCustomPopUpView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,6 +430,8 @@
 		58F7BCA816C6BF4C0049141A /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				58F7BCB116C71EB30049141A /* ActUtility.h */,
+				58F7BCB216C71EB30049141A /* ActUtility.m */,
 				58F7BC8B16C646A10049141A /* iCarousel */,
 				58F7BC8216C645DE0049141A /* PICustomView.h */,
 				58F7BC8316C645DE0049141A /* PICustomView.m */,
@@ -444,6 +452,8 @@
 			children = (
 				58F7BCAA16C6BF800049141A /* LBDProductViewController.h */,
 				58F7BCAB16C6BF800049141A /* LBDProductViewController.m */,
+				58F7BCB416C720B70049141A /* LBDCustomPopUpView.h */,
+				58F7BCB516C720B70049141A /* LBDCustomPopUpView.m */,
 			);
 			name = ProductView;
 			sourceTree = "<group>";
@@ -553,6 +563,8 @@
 				58F7BC8E16C646A10049141A /* iCarousel.m in Sources */,
 				58F7BC9316C648250049141A /* LBDCustomerViewController.m in Sources */,
 				58F7BCAC16C6BF800049141A /* LBDProductViewController.m in Sources */,
+				58F7BCB316C71EB40049141A /* ActUtility.m in Sources */,
+				58F7BCB616C720B80049141A /* LBDCustomPopUpView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
