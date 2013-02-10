@@ -11,6 +11,7 @@
 #import "TwilioDataSource.h"
 #import "JSON.h"
 #import "SBJsonParser.h"
+#import "AppDelegate.h"
 
 @interface LBDProductViewController ()<LBDCustomPopUpViewDelegate, UIScrollViewDelegate, TwilioDataSourceDelegate>
 {
@@ -78,12 +79,17 @@
     //[mainScroll setDelegate:self];
     [homebgView addSubview:mainScroll];
     
+    
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    UIImage *img = app.storedImg;
+    
+    
     UIImageView *tmpV=nil;
     float y=0;
     for(int i=0; i<[productImagesArray count]; i++)
     {
         tmpV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 748*i, 1024, 748)];
-        [tmpV setImage:[UIImage imageNamed:[NSString stringWithFormat:@"v%d", i%5]]];
+        [tmpV setImage:img];
         [tmpV setTag:i+5000];
         [tmpV setBackgroundColor:[UIColor clearColor]];
         [tmpV setContentMode:UIViewContentModeCenter];
@@ -119,7 +125,7 @@
     //[mainScroll scrollRectToVisible:CGRectMake(0, 748*1-2*(40+logoImg.size.height), 1024, 748) animated:NO];
     UIImage *tmpImg = [UIImage imageNamed:@"Navvvv"];
     UIImageView *tmpView = [[UIImageView alloc] initWithFrame:CGRectMake(1668/2, 0, tmpImg.size.width, tmpImg.size.height)];
-    [tmpView setImage:tmpImg];
+//    [tmpView setImage:tmpImg];
     [tmpView setUserInteractionEnabled:YES];
     
     
@@ -133,6 +139,9 @@
     [sideScroll setDecelerationRate:UIScrollViewDecelerationRateNormal];
     [sideScroll setDelegate:self];
     [tmpView addSubview:sideScroll];
+    
+    
+    
     
     UIImageView *tmpS=nil;
     float ys=0;
