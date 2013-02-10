@@ -84,6 +84,9 @@
 		581071F216C757C90067409A /* v_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 581071CD16C757C90067409A /* v_2.png */; };
 		581071F316C757C90067409A /* v_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 581071CE16C757C90067409A /* v_3.png */; };
 		581071F416C757C90067409A /* v_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 581071CF16C757C90067409A /* v_4.png */; };
+		5810720016C78DBE0067409A /* QuestionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581071FF16C78DBE0067409A /* QuestionsView.m */; };
+		5810720316C794AE0067409A /* DrawingPin1_Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 5810720216C794AD0067409A /* DrawingPin1_Blue.png */; };
+		5810720516C7984F0067409A /* side_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5810720416C7984F0067409A /* side_4.png */; };
 		58F7BC7F16C645CE0049141A /* PICustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BC7A16C645CE0049141A /* PICustomButton.m */; };
 		58F7BC8016C645CE0049141A /* PICustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BC7C16C645CE0049141A /* PICustomCell.m */; };
 		58F7BC8116C645CE0049141A /* ScrollCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BC7E16C645CE0049141A /* ScrollCarouselView.m */; };
@@ -228,6 +231,10 @@
 		581071CD16C757C90067409A /* v_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v_2.png; sourceTree = "<group>"; };
 		581071CE16C757C90067409A /* v_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v_3.png; sourceTree = "<group>"; };
 		581071CF16C757C90067409A /* v_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = v_4.png; sourceTree = "<group>"; };
+		581071FE16C78DBE0067409A /* QuestionsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsView.h; sourceTree = "<group>"; };
+		581071FF16C78DBE0067409A /* QuestionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsView.m; sourceTree = "<group>"; };
+		5810720216C794AD0067409A /* DrawingPin1_Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DrawingPin1_Blue.png; sourceTree = "<group>"; };
+		5810720416C7984F0067409A /* side_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = side_4.png; sourceTree = "<group>"; };
 		58F7BC7916C645CE0049141A /* PICustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICustomButton.h; sourceTree = "<group>"; };
 		58F7BC7A16C645CE0049141A /* PICustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PICustomButton.m; sourceTree = "<group>"; };
 		58F7BC7B16C645CE0049141A /* PICustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICustomCell.h; sourceTree = "<group>"; };
@@ -366,6 +373,7 @@
 		1BBD35C716C5A9CE00BB9ACF /* LBD */ = {
 			isa = PBXGroup;
 			children = (
+				5810720216C794AD0067409A /* DrawingPin1_Blue.png */,
 				1796D3A416C729C800A91849 /* Twilio */,
 				1BBD364716C5FDBA00BB9ACF /* Model */,
 				1BBD362E16C5FD3000BB9ACF /* Extras */,
@@ -657,6 +665,8 @@
 				58F7BCAB16C6BF800049141A /* LBDProductViewController.m */,
 				58F7BCB416C720B70049141A /* LBDCustomPopUpView.h */,
 				58F7BCB516C720B70049141A /* LBDCustomPopUpView.m */,
+				581071FE16C78DBE0067409A /* QuestionsView.h */,
+				581071FF16C78DBE0067409A /* QuestionsView.m */,
 			);
 			name = ProductView;
 			sourceTree = "<group>";
@@ -677,6 +687,7 @@
 				58F7BCC016C73E1B0049141A /* side_1.png */,
 				58F7BCC116C73E1B0049141A /* side_2.png */,
 				58F7BCC216C73E1B0049141A /* side_3.png */,
+				5810720416C7984F0067409A /* side_4.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -767,6 +778,8 @@
 				1B24A9B816C7714D007B19E0 /* blackBG@2x.png in Resources */,
 				1B24A9BA16C77150007B19E0 /* searchGlass@2x.png in Resources */,
 				1B24A9BC16C773A6007B19E0 /* login_with_linkedin@2x.png in Resources */,
+				5810720316C794AE0067409A /* DrawingPin1_Blue.png in Resources */,
+				5810720516C7984F0067409A /* side_4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,6 +834,7 @@
 				1BBC58EE16C752720058F00B /* LBDCreateGroupViewController.m in Sources */,
 				1BBC58FA16C753240058F00B /* UIImage+ProportionalFill.m in Sources */,
 				1BBC58FE16C753290058F00B /* WebImageOperations.m in Sources */,
+				5810720016C78DBE0067409A /* QuestionsView.m in Sources */,
 				1B77183316C786B3004192F5 /* APIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -850,8 +864,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sumit Mehra (3GE4K2W7LW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sumit Mehra (3GE4K2W7LW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -866,8 +880,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "522E7C75-D530-4F90-8C06-4223179F31CE";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "522E7C75-D530-4F90-8C06-4223179F31CE";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -884,8 +898,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sumit Mehra (3GE4K2W7LW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sumit Mehra (3GE4K2W7LW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -893,8 +907,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "522E7C75-D530-4F90-8C06-4223179F31CE";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "522E7C75-D530-4F90-8C06-4223179F31CE";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -920,8 +934,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "522E7C75-D530-4F90-8C06-4223179F31CE";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "522E7C75-D530-4F90-8C06-4223179F31CE";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -945,8 +959,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "522E7C75-D530-4F90-8C06-4223179F31CE";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "522E7C75-D530-4F90-8C06-4223179F31CE";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
