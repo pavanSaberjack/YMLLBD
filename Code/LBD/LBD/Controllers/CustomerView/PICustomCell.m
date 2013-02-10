@@ -99,7 +99,7 @@
                     [customButton setImage:itemImage forState:UIControlStateNormal];
                     [customButton setBackgroundColor:[UIColor clearColor]];
                     AppDelegate *appDel = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-                    appDel.storedImg = itemImage;
+                    [appDel.storedArrOfImgs addObject:itemImage];
                 }
             }];
         }
