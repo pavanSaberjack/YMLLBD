@@ -21,6 +21,8 @@
     NSDictionary *extras;
 }
 
++ (LBDUser *)currentUser;
+
 @property (retain) NSString *serviceName;
 @property (retain) NSString *authToken;
 @property (retain) NSString *userName;

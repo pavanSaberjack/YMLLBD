@@ -26,6 +26,21 @@
             serviceName ,userId, userName, email, authToken, extras];
 }
 
++ (LBDUser *)currentUser
+{
+    static dispatch_once_t once;
+    static id _currentUser;
+    
+    if(nil!=_currentUser)
+        return _currentUser;
+    
+    dispatch_once(&once, ^{
+        _currentUser = [[self alloc] init];
+    });
+    return _currentUser;
+}
+
+
 
 #pragma mark - Dealloc
 - (void) dealloc
