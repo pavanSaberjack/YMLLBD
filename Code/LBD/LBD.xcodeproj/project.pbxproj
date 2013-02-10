@@ -15,6 +15,11 @@
 		1796D3BC16C72AB300A91849 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796D3BB16C72AB300A91849 /* SystemConfiguration.framework */; };
 		1796D3C516C72B3400A91849 /* libTwilioClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796D3C416C72B3400A91849 /* libTwilioClient.a */; };
 		1796D3C716C72C6C00A91849 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796D3C616C72C6C00A91849 /* AudioToolbox.framework */; };
+		1B24A9B416C77141007B19E0 /* blackBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B24A9B316C77141007B19E0 /* blackBG.png */; };
+		1B24A9B616C77146007B19E0 /* searchGlass.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B24A9B516C77146007B19E0 /* searchGlass.png */; };
+		1B24A9B816C7714D007B19E0 /* blackBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B24A9B716C7714D007B19E0 /* blackBG@2x.png */; };
+		1B24A9BA16C77150007B19E0 /* searchGlass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B24A9B916C77150007B19E0 /* searchGlass@2x.png */; };
+		1B24A9BC16C773A6007B19E0 /* login_with_linkedin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B24A9BB16C773A6007B19E0 /* login_with_linkedin@2x.png */; };
 		1BBC58EE16C752720058F00B /* LBDCreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC58ED16C752720058F00B /* LBDCreateGroupViewController.m */; };
 		1BBC58FA16C753240058F00B /* UIImage+ProportionalFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC58F916C753240058F00B /* UIImage+ProportionalFill.m */; };
 		1BBC58FE16C753290058F00B /* WebImageOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC58FD16C753290058F00B /* WebImageOperations.m */; };
@@ -24,8 +29,6 @@
 		1BBD35CC16C5A9CE00BB9ACF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BBD35CA16C5A9CE00BB9ACF /* InfoPlist.strings */; };
 		1BBD35CE16C5A9CE00BB9ACF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBD35CD16C5A9CE00BB9ACF /* main.m */; };
 		1BBD35D216C5A9CE00BB9ACF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBD35D116C5A9CE00BB9ACF /* AppDelegate.m */; };
-		1BBD35D416C5A9CE00BB9ACF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBD35D316C5A9CE00BB9ACF /* Default.png */; };
-		1BBD35D616C5A9CE00BB9ACF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBD35D516C5A9CE00BB9ACF /* Default@2x.png */; };
 		1BBD35D816C5A9CE00BB9ACF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBD35D716C5A9CE00BB9ACF /* Default-568h@2x.png */; };
 		1BBD35E416C5F00700BB9ACF /* signin-with-linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBD35E316C5F00700BB9ACF /* signin-with-linkedin.png */; };
 		1BBD35E816C5F71300BB9ACF /* linkedin-button-login.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBD35E716C5F71300BB9ACF /* linkedin-button-login.png */; };
@@ -112,6 +115,11 @@
 		1796D3C316C72B3400A91849 /* TwilioClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwilioClient.h; sourceTree = "<group>"; };
 		1796D3C416C72B3400A91849 /* libTwilioClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTwilioClient.a; path = Twilio/libTwilioClient.a; sourceTree = "<group>"; };
 		1796D3C616C72C6C00A91849 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1B24A9B316C77141007B19E0 /* blackBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackBG.png; sourceTree = "<group>"; };
+		1B24A9B516C77146007B19E0 /* searchGlass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchGlass.png; sourceTree = "<group>"; };
+		1B24A9B716C7714D007B19E0 /* blackBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackBG@2x.png"; sourceTree = "<group>"; };
+		1B24A9B916C77150007B19E0 /* searchGlass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchGlass@2x.png"; sourceTree = "<group>"; };
+		1B24A9BB16C773A6007B19E0 /* login_with_linkedin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_with_linkedin@2x.png"; sourceTree = "<group>"; };
 		1BBC58EC16C752720058F00B /* LBDCreateGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDCreateGroupViewController.h; sourceTree = "<group>"; };
 		1BBC58ED16C752720058F00B /* LBDCreateGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDCreateGroupViewController.m; sourceTree = "<group>"; };
 		1BBC58F816C753240058F00B /* UIImage+ProportionalFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ProportionalFill.h"; sourceTree = "<group>"; };
@@ -383,7 +391,12 @@
 		1BBD35E216C5EFFE00BB9ACF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1B24A9B516C77146007B19E0 /* searchGlass.png */,
+				1B24A9B916C77150007B19E0 /* searchGlass@2x.png */,
+				1B24A9B316C77141007B19E0 /* blackBG.png */,
+				1B24A9B716C7714D007B19E0 /* blackBG@2x.png */,
 				1BBD35E716C5F71300BB9ACF /* linkedin-button-login.png */,
+				1B24A9BB16C773A6007B19E0 /* login_with_linkedin@2x.png */,
 				1BBD35E916C5F81500BB9ACF /* login_with_linkedin.png */,
 				1BBD35E316C5F00700BB9ACF /* signin-with-linkedin.png */,
 			);
@@ -703,8 +716,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BBD35CC16C5A9CE00BB9ACF /* InfoPlist.strings in Resources */,
-				1BBD35D416C5A9CE00BB9ACF /* Default.png in Resources */,
-				1BBD35D616C5A9CE00BB9ACF /* Default@2x.png in Resources */,
 				1BBD35D816C5A9CE00BB9ACF /* Default-568h@2x.png in Resources */,
 				1BBD35E416C5F00700BB9ACF /* signin-with-linkedin.png in Resources */,
 				1BBD35E816C5F71300BB9ACF /* linkedin-button-login.png in Resources */,
@@ -734,6 +745,11 @@
 				581071F216C757C90067409A /* v_2.png in Resources */,
 				581071F316C757C90067409A /* v_3.png in Resources */,
 				581071F416C757C90067409A /* v_4.png in Resources */,
+				1B24A9B416C77141007B19E0 /* blackBG.png in Resources */,
+				1B24A9B616C77146007B19E0 /* searchGlass.png in Resources */,
+				1B24A9B816C7714D007B19E0 /* blackBG@2x.png in Resources */,
+				1B24A9BA16C77150007B19E0 /* searchGlass@2x.png in Resources */,
+				1B24A9BC16C773A6007B19E0 /* login_with_linkedin@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -886,8 +902,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9BAC184B-EEA9-4F6D-A663-25159F7E60F2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9BAC184B-EEA9-4F6D-A663-25159F7E60F2";
+				PROVISIONING_PROFILE = "522E7C75-D530-4F90-8C06-4223179F31CE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "522E7C75-D530-4F90-8C06-4223179F31CE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -911,8 +927,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9BAC184B-EEA9-4F6D-A663-25159F7E60F2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9BAC184B-EEA9-4F6D-A663-25159F7E60F2";
+				PROVISIONING_PROFILE = "522E7C75-D530-4F90-8C06-4223179F31CE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "522E7C75-D530-4F90-8C06-4223179F31CE";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

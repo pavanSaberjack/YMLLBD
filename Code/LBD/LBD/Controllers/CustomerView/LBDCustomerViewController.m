@@ -31,7 +31,13 @@
 {
     [super viewDidLoad];
     
-    PICustomView *customView = [[PICustomView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768)];
+//    UIImageView *bgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.height, self.view.frame.size.width)];
+//    [bgView setImage:[UIImage imageNamed:@"blackBG"]];
+//    [bgView setUserInteractionEnabled:YES];
+//    [self.view addSubview:bgView];
+//    [bgView release];
+
+    PICustomView *customView = [[PICustomView alloc] initWithFrame:CGRectMake(0.0, 80.0, self.view.frame.size.height, self.view.frame.size.height)];
     [customView setDelegate:self];
     [self.view addSubview:customView];
     [customView release];
