@@ -191,8 +191,15 @@
 
 - (void)questionButtonClicked
 {
-    // play question and answer
+    if(!self.datasource)
+        self.datasource = [[TwilioDataSource alloc]initWithUserName:[LBDUser currentUser].userName];
     
+    // play question and answer
+    if([[LBDUser currentUser].type isEqualToString:USER_VENDOR])
+    {
+        self.datasource.dataSourceDelegate = self;
+        [self.datasource recordQuerys];
+    }
     
 }
 
