@@ -8,6 +8,7 @@
 
 #import "LBDCustomerViewController.h"
 #import "PICustomView.h"
+#import "LBDProductViewController.h"
 
 @interface LBDCustomerViewController ()<PICustomViewDelegate>
 
@@ -53,6 +54,10 @@
 - (void)productSelectedAtIndexPath:(NSUInteger)rowIndex withVendorIndex:(NSUInteger)verdorIndex withProductIndex:(NSUInteger)productIndex
 {
     NSLog(@"%d, %d, %d",rowIndex, verdorIndex, productIndex);
+    
+    LBDProductViewController *productView = [[LBDProductViewController alloc] init];
+    [self.navigationController pushViewController:productView animated:YES];
+    [productView release];
 }
 
 - (void)dealloc

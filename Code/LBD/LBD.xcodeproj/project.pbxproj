@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1BAD842516C74099008A3F1A /* WebImageOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD842416C74099008A3F1A /* WebImageOperations.m */; };
-		1BAD842916C74109008A3F1A /* UIImage+ProportionalFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD842816C74109008A3F1A /* UIImage+ProportionalFill.m */; };
-		1BAD842C16C746FC008A3F1A /* LBDCreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD842B16C746FC008A3F1A /* LBDCreateGroupViewController.m */; };
+		1796D3B216C72A7600A91849 /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1796D3A616C72A7600A91849 /* AudioStreamer.m */; };
+		1796D3B416C72A7600A91849 /* TwilioDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1796D3B116C72A7600A91849 /* TwilioDataSource.m */; };
+		1796D3B616C72A9200A91849 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796D3B516C72A9200A91849 /* CFNetwork.framework */; };
+		1796D3B816C72A9900A91849 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796D3B716C72A9900A91849 /* CoreAudio.framework */; };
+		1796D3BA16C72AAB00A91849 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796D3B916C72AAB00A91849 /* AVFoundation.framework */; };
+		1796D3BC16C72AB300A91849 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796D3BB16C72AB300A91849 /* SystemConfiguration.framework */; };
+		1796D3C516C72B3400A91849 /* libTwilioClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796D3C416C72B3400A91849 /* libTwilioClient.a */; };
+		1796D3C716C72C6C00A91849 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796D3C616C72C6C00A91849 /* AudioToolbox.framework */; };
+		1BBC58EE16C752720058F00B /* LBDCreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC58ED16C752720058F00B /* LBDCreateGroupViewController.m */; };
+		1BBC58FA16C753240058F00B /* UIImage+ProportionalFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC58F916C753240058F00B /* UIImage+ProportionalFill.m */; };
+		1BBC58FE16C753290058F00B /* WebImageOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC58FD16C753290058F00B /* WebImageOperations.m */; };
 		1BBD35C216C5A9CE00BB9ACF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBD35C116C5A9CE00BB9ACF /* UIKit.framework */; };
 		1BBD35C416C5A9CE00BB9ACF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBD35C316C5A9CE00BB9ACF /* Foundation.framework */; };
 		1BBD35C616C5A9CE00BB9ACF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBD35C516C5A9CE00BB9ACF /* CoreGraphics.framework */; };
@@ -58,15 +66,37 @@
 		58F7BC9016C646CD0049141A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F7BC8F16C646CD0049141A /* QuartzCore.framework */; };
 		58F7BC9316C648250049141A /* LBDCustomerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BC9216C648250049141A /* LBDCustomerViewController.m */; };
 		58F7BCAC16C6BF800049141A /* LBDProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BCAB16C6BF800049141A /* LBDProductViewController.m */; };
+		58F7BCB316C71EB40049141A /* ActUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BCB216C71EB30049141A /* ActUtility.m */; };
+		58F7BCB616C720B80049141A /* LBDCustomPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BCB516C720B70049141A /* LBDCustomPopUpView.m */; };
+		58F7BCC316C73E1B0049141A /* side_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F7BCBF16C73E1B0049141A /* side_0.png */; };
+		58F7BCC416C73E1B0049141A /* side_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F7BCC016C73E1B0049141A /* side_1.png */; };
+		58F7BCC516C73E1B0049141A /* side_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F7BCC116C73E1B0049141A /* side_2.png */; };
+		58F7BCC616C73E1B0049141A /* side_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F7BCC216C73E1B0049141A /* side_3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1BAD842316C74099008A3F1A /* WebImageOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebImageOperations.h; sourceTree = "<group>"; };
-		1BAD842416C74099008A3F1A /* WebImageOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebImageOperations.m; sourceTree = "<group>"; };
-		1BAD842716C74109008A3F1A /* UIImage+ProportionalFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ProportionalFill.h"; sourceTree = "<group>"; };
-		1BAD842816C74109008A3F1A /* UIImage+ProportionalFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ProportionalFill.m"; sourceTree = "<group>"; };
-		1BAD842A16C746FC008A3F1A /* LBDCreateGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDCreateGroupViewController.h; sourceTree = "<group>"; };
-		1BAD842B16C746FC008A3F1A /* LBDCreateGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDCreateGroupViewController.m; sourceTree = "<group>"; };
+		1796D3A516C72A7600A91849 /* AudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioStreamer.h; path = Twilio/AudioStreamer.h; sourceTree = "<group>"; };
+		1796D3A616C72A7600A91849 /* AudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioStreamer.m; path = Twilio/AudioStreamer.m; sourceTree = "<group>"; };
+		1796D3B016C72A7600A91849 /* TwilioDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwilioDataSource.h; path = Twilio/TwilioDataSource.h; sourceTree = "<group>"; };
+		1796D3B116C72A7600A91849 /* TwilioDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwilioDataSource.m; path = Twilio/TwilioDataSource.m; sourceTree = "<group>"; };
+		1796D3B516C72A9200A91849 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1796D3B716C72A9900A91849 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		1796D3B916C72AAB00A91849 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1796D3BB16C72AB300A91849 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1796D3BE16C72B3400A91849 /* TCConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCConnection.h; sourceTree = "<group>"; };
+		1796D3BF16C72B3400A91849 /* TCConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCConnectionDelegate.h; sourceTree = "<group>"; };
+		1796D3C016C72B3400A91849 /* TCDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCDevice.h; sourceTree = "<group>"; };
+		1796D3C116C72B3400A91849 /* TCDeviceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCDeviceDelegate.h; sourceTree = "<group>"; };
+		1796D3C216C72B3400A91849 /* TCPresenceEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPresenceEvent.h; sourceTree = "<group>"; };
+		1796D3C316C72B3400A91849 /* TwilioClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwilioClient.h; sourceTree = "<group>"; };
+		1796D3C416C72B3400A91849 /* libTwilioClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTwilioClient.a; path = Twilio/libTwilioClient.a; sourceTree = "<group>"; };
+		1796D3C616C72C6C00A91849 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1BBC58EC16C752720058F00B /* LBDCreateGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDCreateGroupViewController.h; sourceTree = "<group>"; };
+		1BBC58ED16C752720058F00B /* LBDCreateGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDCreateGroupViewController.m; sourceTree = "<group>"; };
+		1BBC58F816C753240058F00B /* UIImage+ProportionalFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ProportionalFill.h"; sourceTree = "<group>"; };
+		1BBC58F916C753240058F00B /* UIImage+ProportionalFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ProportionalFill.m"; sourceTree = "<group>"; };
+		1BBC58FC16C753290058F00B /* WebImageOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebImageOperations.h; sourceTree = "<group>"; };
+		1BBC58FD16C753290058F00B /* WebImageOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebImageOperations.m; sourceTree = "<group>"; };
 		1BBD35BE16C5A9CE00BB9ACF /* LBD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LBD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BBD35C116C5A9CE00BB9ACF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1BBD35C316C5A9CE00BB9ACF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -158,6 +188,14 @@
 		58F7BC9216C648250049141A /* LBDCustomerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDCustomerViewController.m; sourceTree = "<group>"; };
 		58F7BCAA16C6BF800049141A /* LBDProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDProductViewController.h; sourceTree = "<group>"; };
 		58F7BCAB16C6BF800049141A /* LBDProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDProductViewController.m; sourceTree = "<group>"; };
+		58F7BCB116C71EB30049141A /* ActUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActUtility.h; sourceTree = "<group>"; };
+		58F7BCB216C71EB30049141A /* ActUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActUtility.m; sourceTree = "<group>"; };
+		58F7BCB416C720B70049141A /* LBDCustomPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDCustomPopUpView.h; sourceTree = "<group>"; };
+		58F7BCB516C720B70049141A /* LBDCustomPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDCustomPopUpView.m; sourceTree = "<group>"; };
+		58F7BCBF16C73E1B0049141A /* side_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = side_0.png; sourceTree = "<group>"; };
+		58F7BCC016C73E1B0049141A /* side_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = side_1.png; sourceTree = "<group>"; };
+		58F7BCC116C73E1B0049141A /* side_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = side_2.png; sourceTree = "<group>"; };
+		58F7BCC216C73E1B0049141A /* side_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = side_3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,32 +203,65 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1796D3C716C72C6C00A91849 /* AudioToolbox.framework in Frameworks */,
+				1796D3BC16C72AB300A91849 /* SystemConfiguration.framework in Frameworks */,
+				1796D3BA16C72AAB00A91849 /* AVFoundation.framework in Frameworks */,
+				1796D3B816C72A9900A91849 /* CoreAudio.framework in Frameworks */,
+				1796D3B616C72A9200A91849 /* CFNetwork.framework in Frameworks */,
 				58F7BC9016C646CD0049141A /* QuartzCore.framework in Frameworks */,
 				1BBD35C216C5A9CE00BB9ACF /* UIKit.framework in Frameworks */,
 				1BBD35C416C5A9CE00BB9ACF /* Foundation.framework in Frameworks */,
 				1BBD35C616C5A9CE00BB9ACF /* CoreGraphics.framework in Frameworks */,
+				1796D3C516C72B3400A91849 /* libTwilioClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1BAD842216C74099008A3F1A /* ImageDownloader */ = {
+		1796D3A416C729C800A91849 /* Twilio */ = {
 			isa = PBXGroup;
 			children = (
-				1BAD842316C74099008A3F1A /* WebImageOperations.h */,
-				1BAD842416C74099008A3F1A /* WebImageOperations.m */,
+				1796D3BD16C72B3400A91849 /* Headers */,
+				1796D3C416C72B3400A91849 /* libTwilioClient.a */,
+				1796D3A516C72A7600A91849 /* AudioStreamer.h */,
+				1796D3A616C72A7600A91849 /* AudioStreamer.m */,
+				1796D3B016C72A7600A91849 /* TwilioDataSource.h */,
+				1796D3B116C72A7600A91849 /* TwilioDataSource.m */,
 			);
-			path = ImageDownloader;
+			name = Twilio;
 			sourceTree = "<group>";
 		};
-		1BAD842616C74109008A3F1A /* ImageScaling */ = {
+		1796D3BD16C72B3400A91849 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				1BAD842716C74109008A3F1A /* UIImage+ProportionalFill.h */,
-				1BAD842816C74109008A3F1A /* UIImage+ProportionalFill.m */,
+				1796D3BE16C72B3400A91849 /* TCConnection.h */,
+				1796D3BF16C72B3400A91849 /* TCConnectionDelegate.h */,
+				1796D3C016C72B3400A91849 /* TCDevice.h */,
+				1796D3C116C72B3400A91849 /* TCDeviceDelegate.h */,
+				1796D3C216C72B3400A91849 /* TCPresenceEvent.h */,
+				1796D3C316C72B3400A91849 /* TwilioClient.h */,
 			);
-			path = ImageScaling;
+			name = Headers;
+			path = Twilio/Headers;
+			sourceTree = "<group>";
+		};
+		1BBC58F716C753240058F00B /* Image_Scaling */ = {
+			isa = PBXGroup;
+			children = (
+				1BBC58F816C753240058F00B /* UIImage+ProportionalFill.h */,
+				1BBC58F916C753240058F00B /* UIImage+ProportionalFill.m */,
+			);
+			path = Image_Scaling;
+			sourceTree = "<group>";
+		};
+		1BBC58FB16C753290058F00B /* Image_Downloader */ = {
+			isa = PBXGroup;
+			children = (
+				1BBC58FC16C753290058F00B /* WebImageOperations.h */,
+				1BBC58FD16C753290058F00B /* WebImageOperations.m */,
+			);
+			path = Image_Downloader;
 			sourceTree = "<group>";
 		};
 		1BBD35B516C5A9CE00BB9ACF = {
@@ -213,6 +284,11 @@
 		1BBD35C016C5A9CE00BB9ACF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1796D3C616C72C6C00A91849 /* AudioToolbox.framework */,
+				1796D3BB16C72AB300A91849 /* SystemConfiguration.framework */,
+				1796D3B916C72AAB00A91849 /* AVFoundation.framework */,
+				1796D3B716C72A9900A91849 /* CoreAudio.framework */,
+				1796D3B516C72A9200A91849 /* CFNetwork.framework */,
 				58F7BC8F16C646CD0049141A /* QuartzCore.framework */,
 				1BBD35C116C5A9CE00BB9ACF /* UIKit.framework */,
 				1BBD35C316C5A9CE00BB9ACF /* Foundation.framework */,
@@ -224,6 +300,7 @@
 		1BBD35C716C5A9CE00BB9ACF /* LBD */ = {
 			isa = PBXGroup;
 			children = (
+				1796D3A416C729C800A91849 /* Twilio */,
 				1BBD364716C5FDBA00BB9ACF /* Model */,
 				1BBD362E16C5FD3000BB9ACF /* Extras */,
 				1BBD362916C5FB5A00BB9ACF /* Network */,
@@ -352,7 +429,7 @@
 		1BBD362916C5FB5A00BB9ACF /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				1BAD842216C74099008A3F1A /* ImageDownloader */,
+				1BBC58FB16C753290058F00B /* Image_Downloader */,
 				1BBD362A16C5FB5A00BB9ACF /* Login */,
 			);
 			path = Network;
@@ -370,7 +447,7 @@
 		1BBD362E16C5FD3000BB9ACF /* Extras */ = {
 			isa = PBXGroup;
 			children = (
-				1BAD842616C74109008A3F1A /* ImageScaling */,
+				1BBC58F716C753240058F00B /* Image_Scaling */,
 				1BBD363316C5FD5000BB9ACF /* JSON */,
 				1BBD362F16C5FD3000BB9ACF /* HUD */,
 			);
@@ -426,10 +503,10 @@
 		1BBD364C16C6063B00BB9ACF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1BBC58EC16C752720058F00B /* LBDCreateGroupViewController.h */,
+				1BBC58ED16C752720058F00B /* LBDCreateGroupViewController.m */,
 				1BBD364D16C6063B00BB9ACF /* LBDHomeViewController.h */,
 				1BBD364E16C6063B00BB9ACF /* LBDHomeViewController.m */,
-				1BAD842A16C746FC008A3F1A /* LBDCreateGroupViewController.h */,
-				1BAD842B16C746FC008A3F1A /* LBDCreateGroupViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -455,6 +532,8 @@
 		58F7BCA816C6BF4C0049141A /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				58F7BCB116C71EB30049141A /* ActUtility.h */,
+				58F7BCB216C71EB30049141A /* ActUtility.m */,
 				58F7BC8B16C646A10049141A /* iCarousel */,
 				58F7BC8216C645DE0049141A /* PICustomView.h */,
 				58F7BC8316C645DE0049141A /* PICustomView.m */,
@@ -473,10 +552,32 @@
 		58F7BCA916C6BF660049141A /* ProductView */ = {
 			isa = PBXGroup;
 			children = (
+				58F7BCB716C72E280049141A /* SFScrollView */,
 				58F7BCAA16C6BF800049141A /* LBDProductViewController.h */,
 				58F7BCAB16C6BF800049141A /* LBDProductViewController.m */,
+				58F7BCB416C720B70049141A /* LBDCustomPopUpView.h */,
+				58F7BCB516C720B70049141A /* LBDCustomPopUpView.m */,
 			);
 			name = ProductView;
+			sourceTree = "<group>";
+		};
+		58F7BCB716C72E280049141A /* SFScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				58F7BCBE16C73DFC0049141A /* Images */,
+			);
+			path = SFScrollView;
+			sourceTree = "<group>";
+		};
+		58F7BCBE16C73DFC0049141A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				58F7BCBF16C73E1B0049141A /* side_0.png */,
+				58F7BCC016C73E1B0049141A /* side_1.png */,
+				58F7BCC116C73E1B0049141A /* side_2.png */,
+				58F7BCC216C73E1B0049141A /* side_3.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,6 +638,10 @@
 				1BBD35E416C5F00700BB9ACF /* signin-with-linkedin.png in Resources */,
 				1BBD35E816C5F71300BB9ACF /* linkedin-button-login.png in Resources */,
 				1BBD35EA16C5F81500BB9ACF /* login_with_linkedin.png in Resources */,
+				58F7BCC316C73E1B0049141A /* side_0.png in Resources */,
+				58F7BCC416C73E1B0049141A /* side_1.png in Resources */,
+				58F7BCC516C73E1B0049141A /* side_2.png in Resources */,
+				58F7BCC616C73E1B0049141A /* side_3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,9 +689,13 @@
 				58F7BC8E16C646A10049141A /* iCarousel.m in Sources */,
 				58F7BC9316C648250049141A /* LBDCustomerViewController.m in Sources */,
 				58F7BCAC16C6BF800049141A /* LBDProductViewController.m in Sources */,
-				1BAD842516C74099008A3F1A /* WebImageOperations.m in Sources */,
-				1BAD842916C74109008A3F1A /* UIImage+ProportionalFill.m in Sources */,
-				1BAD842C16C746FC008A3F1A /* LBDCreateGroupViewController.m in Sources */,
+				1796D3B216C72A7600A91849 /* AudioStreamer.m in Sources */,
+				1796D3B416C72A7600A91849 /* TwilioDataSource.m in Sources */,
+				58F7BCB316C71EB40049141A /* ActUtility.m in Sources */,
+				58F7BCB616C720B80049141A /* LBDCustomPopUpView.m in Sources */,
+				1BBC58EE16C752720058F00B /* LBDCreateGroupViewController.m in Sources */,
+				1BBC58FA16C753240058F00B /* UIImage+ProportionalFill.m in Sources */,
+				1BBC58FE16C753290058F00B /* WebImageOperations.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,6 +784,11 @@
 				GCC_PREFIX_HEADER = "LBD/LBD-Prefix.pch";
 				INFOPLIST_FILE = "LBD/LBD-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/LBD/Twilio/Twilio\"",
+					"\"$(SRCROOT)/LBD/Twilio\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "522E7C75-D530-4F90-8C06-4223179F31CE";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "522E7C75-D530-4F90-8C06-4223179F31CE";
@@ -691,6 +805,11 @@
 				GCC_PREFIX_HEADER = "LBD/LBD-Prefix.pch";
 				INFOPLIST_FILE = "LBD/LBD-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/LBD/Twilio/Twilio\"",
+					"\"$(SRCROOT)/LBD/Twilio\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "522E7C75-D530-4F90-8C06-4223179F31CE";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "522E7C75-D530-4F90-8C06-4223179F31CE";
