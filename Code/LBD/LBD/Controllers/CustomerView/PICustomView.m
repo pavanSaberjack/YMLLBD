@@ -24,6 +24,9 @@
     ScrollCarouselView *scrollCarouselView;
     
     UIScrollView *productScrollView;
+    
+    
+    NSMutableArray *vendorsArray;
 }
 @end
 
@@ -47,6 +50,8 @@
         selectedIndex = -1;
         previousIndex = -1;
         selectedComponent = -1;
+        
+        vendorsArray = [[NSMutableArray alloc]  init];
         
         [self createTheView];
         
@@ -115,10 +120,19 @@
     [productScrollView setContentSize:CGSizeMake(x, productScrollView.frame.size.height)];
 }
 
+- (void)reloadTheViewWithVendorsArray:(NSArray *)verdorsArray
+{
+    [vendorsArray removeAllObjects];
+    
+    [vendorsArray addObjectsFromArray:verdorsArray];
+    
+    [venderTableView reloadData];
+}
+
 #pragma mark - UITableViewDataSource methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3.0;
+    return  5 ; //ceil([vendorsArray count]/3);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -132,10 +146,36 @@
         cell = [[[PICustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
         [cell setDelegate:self];
         [cell setDataSource:self];
-        [cell createTheView];
-    }    
         
+    }    
+    
+    
+
+    
     [cell setCellIndexPath:indexPath];
+    
+    
+    //indexPath.row *2
+    NSUInteger value = indexPath.row * 3;
+    
+    NSUInteger count  = [vendorsArray count];
+    
+    if (count > value+2) {
+        NSArray *array = @[vendorsArray[value], vendorsArray[value+1], vendorsArray[value+2]];
+        [cell createTheViewWith:array];
+    }
+    else if (count == value+2)
+    {
+        NSArray *array = @[vendorsArray[value], vendorsArray[value+1]];
+        [cell createTheViewWith:array];
+    }
+    else if (count == value+1)
+    {
+        NSArray *array = @[vendorsArray[value]];
+        [cell createTheViewWith:array];
+    }
+    
+    [cell createTheViewWith:@[@"",@"",@""]];
     
     // use NUMBER of components Value get array and send for creation
     
@@ -218,12 +258,22 @@
 {
     // Call the product view from here
     
-    [self.delegate productSelectedAtIndexPath:selectedIndex withVendorIndex:(selectedComponent-1000) withProductIndex:productIndex];
+//    id vendor = vendorsArray[(3*selectedIndex) + (selectedComponent-1000)];
+    
+//    id product = vender[productIndex].id;
+    
+    [self.delegate productSelectedAtIndexPath:selectedIndex withVendorIndex:@"" withProductIndex:@""];
 }
 
 #pragma mark - Button clicked methods
 - (void)buttonClicked:(UIButton *)sender
 {
-    NSLog(@"selected product is at %d for component %d at row %d", sender.tag - 2000, selectedComponent - 1000, selectedIndex);
+//    id vendor = vendorsArray[(3*selectedIndex) + (selectedComponent-1000)];
+    
+//     id product = vender[sender.tag - 2000].id;
+    
+    [self.delegate productSelectedAtIndexPath:selectedIndex withVendorIndex:@"" withProductIndex:@""];
+    
+//    [self.delegate productSelectedAtIndexPath:selectedIndex withVendorIndex:(selectedComponent-1000) withProductIndex:sender.tag - 2000];
 }
 @end
