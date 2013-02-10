@@ -886,8 +886,8 @@
 		1BBD35DC16C5A9CE00BB9ACF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sumit Mehra (3GE4K2W7LW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sumit Mehra (3GE4K2W7LW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LBD/LBD-Prefix.pch";
 				INFOPLIST_FILE = "LBD/LBD-Info.plist";
@@ -911,8 +911,8 @@
 		1BBD35DD16C5A9CE00BB9ACF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sumit Mehra (3GE4K2W7LW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sumit Mehra (3GE4K2W7LW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LBD/LBD-Prefix.pch";
 				INFOPLIST_FILE = "LBD/LBD-Info.plist";
