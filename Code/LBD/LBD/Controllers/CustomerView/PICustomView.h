@@ -17,6 +17,6 @@
 
 @protocol PICustomViewDelegate <NSObject>
 
-- (void)productSelectedAtIndexPath:(NSUInteger)rowIndex withVendorIndex:(NSUInteger)verdorIndex withProductIndex:(NSUInteger)productIndex;
+- (void)productSelectedAtIndexPath:(NSUInteger)rowIndex withVendorIndex:(NSString *)verdorIndex withProductIndex:(NSString *)productIndex;
 
 @end

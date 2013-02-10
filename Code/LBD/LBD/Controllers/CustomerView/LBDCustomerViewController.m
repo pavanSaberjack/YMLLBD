@@ -83,11 +83,14 @@
 }
 
 #pragma mark - PICustomViewDelegate methods
-- (void)productSelectedAtIndexPath:(NSUInteger)rowIndex withVendorIndex:(NSUInteger)verdorIndex withProductIndex:(NSUInteger)productIndex
+- (void)productSelectedAtIndexPath:(NSUInteger)rowIndex withVendorIndex:(NSString *)verdorIndex withProductIndex:(NSString *)productIndex
 {
-    NSLog(@"%d, %d, %d",rowIndex, verdorIndex, productIndex);
+//    NSLog(@"%d, %d, %d",rowIndex, verdorIndex, productIndex);
+//    
+//    
+//    id vender = (3 * rowIndex) + verdorIndex;
     
-    LBDProductViewController *productView = [[LBDProductViewController alloc] init];
+    LBDProductViewController *productView = [[LBDProductViewController alloc] initWithVenderId:@"" WithProductId:@""];
     [self.navigationController pushViewController:productView animated:YES];
     [productView release];
 }
