@@ -19,6 +19,7 @@
 }
 
 @property(nonatomic, strong)TwilioDataSource *datasource;
+@property(nonatomic, assign)NSInteger selectedImageId;
 
 @end
 
@@ -29,6 +30,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.selectedImageId = -1;
     }
     return self;
 }
@@ -254,15 +256,18 @@
     UIImageView *img = (UIImageView *)view;
     
     NSLog(@"selected page %d", img.tag - 5000);
+    self.selectedImageId = img.tag - 5000;
     // Add Question at this co-ordinate
     NSLog(@"Ask question for co-orduinate at %@", [NSValue valueWithCGPoint:point]);
     
     // allocate the data source and record the queries
-    if(!self.datasource)
+    /*if(!self.datasource)
         self.datasource = [[TwilioDataSource alloc]initWithUserName:@"LBD"];
     
     self.datasource.dataSourceDelegate = self;
-    [self.datasource recordQuerys];
+    [self.datasource recordQuerys];*/
+    
+    [self didReceiveRecordedUrl:@"www.google.com"];
     
 }
 
@@ -270,7 +275,7 @@
 - (void)didReceiveRecordedUrl:(NSString *)url
 {
     NSString *urlTobeSent = [url stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-    NSDictionary *dict =@{@"question_audio_url":urlTobeSent,@"client_user_id":@"108099534"};
+    NSDictionary *dict =@{@"question_audio_url":urlTobeSent,@"client_user_id":[LBDUser currentUser].userId,@"vendor_user_id":@"NAN",@"image_id":[NSString stringWithFormat:@"%i",self.selectedImageId]};
     
     NSData *postData = [[NSString stringWithFormat:@"data=%@",[dict JSONRepresentation]] dataUsingEncoding:NSUTF8StringEncoding];
     

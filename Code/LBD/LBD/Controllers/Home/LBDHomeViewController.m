@@ -256,6 +256,17 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if([indexPath section] == 0)
+    {
+        // logged in as user
+        [[LBDUser currentUser]setType:USER_CONSUMER];
+    }
+    else if([indexPath section] == 1)
+    {
+        // logged in as vendor
+        [[LBDUser currentUser]setType:USER_VENDOR];
+    }
+    
     UITableViewCell *tappedCell = [tableView cellForRowAtIndexPath:indexPath];
     if([tappedCell.textLabel.text isEqualToString:@"+"])
     {

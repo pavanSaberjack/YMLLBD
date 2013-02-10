@@ -18,6 +18,7 @@
 @synthesize userId;
 @synthesize authToken;
 @synthesize extras;
+@synthesize type;
 
 -(NSString *)description
 {
