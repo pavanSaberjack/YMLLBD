@@ -10,6 +10,7 @@
 #import "LBDCustomPopUpView.h"
 #import "TwilioDataSource.h"
 #import "JSON.h"
+#import "SBJsonParser.h"
 
 @interface LBDProductViewController ()<LBDCustomPopUpViewDelegate, UIScrollViewDelegate, TwilioDataSourceDelegate>
 {
@@ -26,6 +27,7 @@
 
 @property(nonatomic, strong)TwilioDataSource *datasource;
 @property(nonatomic, assign)NSInteger selectedImageId;
+@property(nonatomic, strong)NSString *latestVoiceUrl;
 
 @end
 
@@ -234,6 +236,11 @@
     [logoView setUserInteractionEnabled:YES];
     [bgView addSubview:logoView];
     [logoView release];
+    
+    if([[LBDUser currentUser].type isEqualToString:USER_VENDOR])
+    {
+        [self getVendorQuestions];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -331,14 +338,21 @@
     NSLog(@"Ask question for co-orduinate at %@", [NSValue valueWithCGPoint:point]);
     
     // allocate the data source and record the queries
-    /*if(!self.datasource)
-        self.datasource = [[TwilioDataSource alloc]initWithUserName:@"LBD"];
+    if(!self.datasource)
+        self.datasource = [[TwilioDataSource alloc]initWithUserName:[LBDUser currentUser].userName];
     
-    self.datasource.dataSourceDelegate = self;
-    [self.datasource recordQuerys];*/
     
-    [self didReceiveRecordedUrl:@"www.google.com"];
-    
+    if([[LBDUser currentUser].type isEqualToString:USER_CONSUMER])
+    {
+        self.datasource.dataSourceDelegate = self;
+        [self.datasource recordQuerys];
+    }
+    else
+    {
+        if(self.latestVoiceUrl && [self.latestVoiceUrl length]>0)
+            [self.datasource listenAudio:[NSURL URLWithString:self.latestVoiceUrl]];
+    }
+     [view removeFromSuperview];
 }
 
 #pragma mark - Twilio datasource delegate
@@ -364,4 +378,35 @@
     //NSString *responseString = [[NSString alloc] initWithFormat:@"%@", responseData];
     NSLog(@"responseData: %@", responseData);
 }
+
+- (void)getVendorQuestions
+{
+    NSDictionary *dict =@{@"user_id":[LBDUser currentUser].userId};
+    
+    NSData *postData = [[NSString stringWithFormat:@"data=%@",[dict JSONRepresentation]] dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    [request setURL:[NSURL URLWithString:@"http://192.168.1.94:3000/question_answers/get.json"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    NSURLResponse *response;
+    NSError *err;
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+    NSString *str = [[NSString alloc]initWithData:responseData encoding:NSUTF8StringEncoding];
+    
+    if(([responseData length]>0)&&(([str length]>0)))
+    {
+        SBJsonParser *parser = [[SBJsonParser alloc]init];
+        NSMutableDictionary *dictionary = [parser objectWithString:str];
+        self.latestVoiceUrl = [NSString stringWithFormat:@"%@",[dictionary[@"qa_client"] objectForKey:@"question_audio_url"]] ;
+        NSLog(@"Hello");
+    }
+    
+    
+}
+
 @end

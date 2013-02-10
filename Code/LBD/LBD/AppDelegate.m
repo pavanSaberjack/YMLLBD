@@ -33,19 +33,29 @@
     [self.window makeKeyAndVisible];
     
     [self setupAppearance];
-    
+    [self fetchLocation];
     return YES;
+}
+
+- (void)fetchLocation
+{
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [locationManager startUpdatingLocation];
 }
 
 - (void)setupAppearance;
 {
-    NSDictionary *titleFormat = @{UITextAttributeFont:[UIFont fontWithName:@"Helvetica-Bold" size:20]};
-    
-    //[[UINavigationBar appearance] setTintColor:[UIColor colorWithHue:0.2 saturation:0.8 brightness:0.6 alpha:1]];
-    [[UINavigationBar appearance] setTintColor: [UIColor colorWithRed:38/255.f green:38/255.f blue:38/255.f alpha:1.0]];
-    [[UINavigationBar appearance] setTitleTextAttributes: titleFormat];
-    [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:2 forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:-1 forBarMetrics:UIBarMetricsLandscapePhone];
+//    NSDictionary *titleFormat = @{UITextAttributeFont:[UIFont fontWithName:@"Helvetica-Bold" size:20]};
+//    
+//    //[[UINavigationBar appearance] setTintColor:[UIColor colorWithHue:0.2 saturation:0.8 brightness:0.6 alpha:1]];
+//    [[UINavigationBar appearance] setTintColor: [UIColor colorWithRed:38/255.f green:38/255.f blue:38/255.f alpha:1.0]];
+//    [[UINavigationBar appearance] setTitleTextAttributes: titleFormat];
+//    [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:2 forBarMetrics:UIBarMetricsDefault];
+//    [[UINavigationBar appearance] setTitleVerticalPositionAdjustment:-1 forBarMetrics:UIBarMetricsLandscapePhone];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -73,6 +83,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - CLlocation delegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    [manager stopUpdatingLocation];
+    NSLog(@"OldLocation %f %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
+    NSLog(@"NewLocation %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
 }
 
 @end
