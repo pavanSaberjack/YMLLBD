@@ -87,6 +87,7 @@
 		5810720016C78DBE0067409A /* QuestionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581071FF16C78DBE0067409A /* QuestionsView.m */; };
 		5810720316C794AE0067409A /* DrawingPin1_Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 5810720216C794AD0067409A /* DrawingPin1_Blue.png */; };
 		5810720516C7984F0067409A /* side_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5810720416C7984F0067409A /* side_4.png */; };
+		5810720F16C7AD2F0067409A /* bmw-m6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5810720E16C7AD2F0067409A /* bmw-m6.jpg */; };
 		58F7BC7F16C645CE0049141A /* PICustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BC7A16C645CE0049141A /* PICustomButton.m */; };
 		58F7BC8016C645CE0049141A /* PICustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BC7C16C645CE0049141A /* PICustomCell.m */; };
 		58F7BC8116C645CE0049141A /* ScrollCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F7BC7E16C645CE0049141A /* ScrollCarouselView.m */; };
@@ -235,6 +236,7 @@
 		581071FF16C78DBE0067409A /* QuestionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsView.m; sourceTree = "<group>"; };
 		5810720216C794AD0067409A /* DrawingPin1_Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DrawingPin1_Blue.png; sourceTree = "<group>"; };
 		5810720416C7984F0067409A /* side_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = side_4.png; sourceTree = "<group>"; };
+		5810720E16C7AD2F0067409A /* bmw-m6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bmw-m6.jpg"; sourceTree = "<group>"; };
 		58F7BC7916C645CE0049141A /* PICustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICustomButton.h; sourceTree = "<group>"; };
 		58F7BC7A16C645CE0049141A /* PICustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PICustomButton.m; sourceTree = "<group>"; };
 		58F7BC7B16C645CE0049141A /* PICustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PICustomCell.h; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 		1BBD35DE16C5ABDB00BB9ACF /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				5810720E16C7AD2F0067409A /* bmw-m6.jpg */,
 				58F7BC6F16C645500049141A /* CustomerView */,
 				1BBD364C16C6063B00BB9ACF /* Home */,
 			);
@@ -780,6 +783,7 @@
 				1B24A9BC16C773A6007B19E0 /* login_with_linkedin@2x.png in Resources */,
 				5810720316C794AE0067409A /* DrawingPin1_Blue.png in Resources */,
 				5810720516C7984F0067409A /* side_4.png in Resources */,
+				5810720F16C7AD2F0067409A /* bmw-m6.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -923,7 +927,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LBD/LBD-Prefix.pch";
 				INFOPLIST_FILE = "LBD/LBD-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/LBD/Twilio/Twilio\"",
@@ -948,7 +952,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LBD/LBD-Prefix.pch";
 				INFOPLIST_FILE = "LBD/LBD-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/LBD/Twilio/Twilio\"",

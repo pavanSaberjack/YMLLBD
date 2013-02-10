@@ -81,8 +81,12 @@
     
     
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    UIImage *img = app.storedImg;
+//    UIImage *img = app.storedImg;
     
+    NSArray *imgsArray = [NSArray arrayWithArray:app.storedArrOfImgs];
+    
+    
+    UIImage *img = [UIImage imageNamed:@"bmw-m6.jpg"];
     
     UIImageView *tmpV=nil;
     float y=0;
@@ -150,7 +154,9 @@
         UIImage *tmpI = [UIImage imageNamed:[NSString stringWithFormat:@"side_%d", i%5]];
         tmpS = [[UIImageView alloc] initWithFrame:CGRectMake(w/2-tmpI.size.width/2, (748/5)*(i+2), tmpI.size.width, 136.0f)];
         [tmpS setAlpha:0.5];
+        [tmpS setImage:imgsArray[1]];
 //        [tmpS setImage:tmpI];
+        [tmpS setClipsToBounds:YES];
         [tmpS setContentMode:UIViewContentModeCenter];
         [tmpS setBackgroundColor:[UIColor whiteColor]];
         [sideScroll addSubview:tmpS];
