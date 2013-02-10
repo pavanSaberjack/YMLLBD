@@ -10,8 +10,15 @@
 #import "PICustomView.h"
 #import "LBDProductViewController.h"
 
-@interface LBDCustomerViewController ()<PICustomViewDelegate>
-
+@interface LBDCustomerViewController ()<PICustomViewDelegate, UITextFieldDelegate>
+{
+    NSMutableString *searchStr;
+    
+    NSTimer *searchTimer;
+    BOOL timerON;
+    
+    UITextField *searchTextField;
+}
 @end
 
 @implementation LBDCustomerViewController
@@ -23,6 +30,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        searchStr = [[NSMutableString alloc] initWithString:@""];
     }
     return self;
 }
@@ -37,7 +45,25 @@
 //    [self.view addSubview:bgView];
 //    [bgView release];
 
-    PICustomView *customView = [[PICustomView alloc] initWithFrame:CGRectMake(0.0, 80.0, self.view.frame.size.height, self.view.frame.size.height)];
+    
+    searchTextField = [[UITextField alloc] initWithFrame:CGRectMake(10.0,
+                                                                    20.0,
+                                                                    self.view.frame.size.height-20.0,
+                                                                    32.0)];
+    [searchTextField setBackgroundColor:[UIColor whiteColor]];
+    [searchTextField setDelegate:self];
+    [searchTextField setFont:[UIFont fontWithName:@"Helvetica" size:20]];
+    [searchTextField setTextAlignment:UITextAlignmentLeft];
+    [searchTextField setBorderStyle:UITextBorderStyleRoundedRect];
+    [searchTextField setAutocorrectionType:UITextAutocorrectionTypeNo];
+    [searchTextField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
+    [searchTextField setReturnKeyType:UIReturnKeyDone];
+    [searchTextField setTextColor:[UIColor grayColor]];
+    [searchTextField setText:@" search for something..."];
+    [self.view addSubview:searchTextField];
+    [searchTextField release];
+
+    PICustomView *customView = [[PICustomView alloc] initWithFrame:CGRectMake(0.0, 52.0, self.view.frame.size.height, self.view.frame.size.height)];
     [customView setDelegate:self];
     [self.view addSubview:customView];
     [customView release];
@@ -69,7 +95,73 @@
 - (void)dealloc
 {
     self.title = nil;
+    [searchStr release];
     [super dealloc];
+}
+
+#pragma mark - TextField methods
+#pragma mark - TextField Delegate methods
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if([textField.text isEqualToString:@" search for something..."])
+    {
+        [textField setText:@""];
+        [textField setTextColor:[UIColor blackColor]];
+    }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if([[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""])
+    {
+        [textField setText:@" search for something..."];
+        [textField setTextColor:[UIColor grayColor]];
+    }
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if(string && ![string isEqualToString:@""])
+    {
+        [searchStr appendString:string];
+    }
+    else
+    {
+        [searchStr deleteCharactersInRange:NSMakeRange([searchStr length]-1, 1)];
+    }
+    NSLog(@"search Str - %@",searchStr);
+    
+    if(![searchStr isEqualToString:@""])
+    {
+        if(timerON)
+        {
+            [searchTimer invalidate];
+            searchTimer = nil;
+        }
+        
+        searchTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self
+                                                     selector:@selector(searchTimerFired:)
+                                                     userInfo:nil repeats:NO];
+        timerON = TRUE;
+    }
+    else
+    {
+        NSLog(@"Empty Search Field");
+    }
+    
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)searchTimerFired:(NSTimer *)aTimer
+{
+    NSLog(@"Search - %@", searchStr);
+    timerON = FALSE;
 }
 
 @end
