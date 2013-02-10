@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define USER_VENDOR @"vendor"
+#define USER_CONSUMER @"consumer"
+
 @interface LBDUser : NSObject
 {
     //NS: minimalistic set
@@ -16,6 +19,7 @@
 	NSString *userName;
 	NSString *email;
 	NSString *userId;
+    NSString *type;
     
     //NS: extra-info -- to be used by services to push in whatever extra key-value pairs they want to save
     NSDictionary *extras;
@@ -28,6 +32,7 @@
 @property (retain) NSString *userName;
 @property (retain) NSString *email;
 @property (retain) NSString *userId;
+@property (retain) NSString *type;
 @property (retain) NSDictionary *extras;
 
 @end

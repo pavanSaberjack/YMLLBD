@@ -11,6 +11,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+#import "LBDUser.h"
 #import "ActUtility.h"
 #import "PICustomButton.h"
 #endif
