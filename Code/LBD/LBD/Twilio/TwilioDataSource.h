@@ -10,10 +10,18 @@
 
 @class TCDevice;
 
+@protocol TwilioDataSourceDelegate <NSObject>
+
+- (void)didReceiveRecordedUrl:(NSString *)string;
+
+@end
+
 @interface TwilioDataSource : NSObject
 
 // the device that connect to the Twilio services
 @property (nonatomic, strong, readonly)TCDevice *device;
+// delegate
+@property (nonatomic, strong)id<TwilioDataSourceDelegate>dataSourceDelegate;
 
 -(id)initWithUserName:(NSString *)userName;
 

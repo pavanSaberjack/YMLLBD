@@ -31,6 +31,8 @@ typedef void(^TCUnlink)(void);
 
 @implementation TwilioDataSource
 
+@synthesize dataSourceDelegate;
+
 -(id)initWithUserName:(NSString *)userName
 {
     if ( self = [super init] )
@@ -168,12 +170,18 @@ typedef void(^TCUnlink)(void);
     self.unlink = nil;
     
     NSString *url = [self getRecordedUrl];
-    
-    if([url length]>0 && _needUrl)
+    if(_needUrl)
     {
-        // upload the url to the backend
-        
         _needUrl = NO;
+        if([url length]>0)
+        {
+            // upload the url to the backend
+            
+            if([self.dataSourceDelegate respondsToSelector:@selector(didReceiveRecordedUrl:)])
+            {
+                [self.dataSourceDelegate didReceiveRecordedUrl:[NSString stringWithFormat:@"%@",url]];
+            }
+        }
     }
 }
 
