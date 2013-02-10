@@ -15,6 +15,8 @@
 
 @implementation LBDCustomerViewController
 
+@synthesize title;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -52,4 +54,11 @@
 {
     NSLog(@"%d, %d, %d",rowIndex, verdorIndex, productIndex);
 }
+
+- (void)dealloc
+{
+    self.title = nil;
+    [super dealloc];
+}
+
 @end

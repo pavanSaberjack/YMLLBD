@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BAD842516C74099008A3F1A /* WebImageOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD842416C74099008A3F1A /* WebImageOperations.m */; };
+		1BAD842916C74109008A3F1A /* UIImage+ProportionalFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD842816C74109008A3F1A /* UIImage+ProportionalFill.m */; };
+		1BAD842C16C746FC008A3F1A /* LBDCreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BAD842B16C746FC008A3F1A /* LBDCreateGroupViewController.m */; };
 		1BBD35C216C5A9CE00BB9ACF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBD35C116C5A9CE00BB9ACF /* UIKit.framework */; };
 		1BBD35C416C5A9CE00BB9ACF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBD35C316C5A9CE00BB9ACF /* Foundation.framework */; };
 		1BBD35C616C5A9CE00BB9ACF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBD35C516C5A9CE00BB9ACF /* CoreGraphics.framework */; };
@@ -58,6 +61,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BAD842316C74099008A3F1A /* WebImageOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebImageOperations.h; sourceTree = "<group>"; };
+		1BAD842416C74099008A3F1A /* WebImageOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebImageOperations.m; sourceTree = "<group>"; };
+		1BAD842716C74109008A3F1A /* UIImage+ProportionalFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ProportionalFill.h"; sourceTree = "<group>"; };
+		1BAD842816C74109008A3F1A /* UIImage+ProportionalFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ProportionalFill.m"; sourceTree = "<group>"; };
+		1BAD842A16C746FC008A3F1A /* LBDCreateGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBDCreateGroupViewController.h; sourceTree = "<group>"; };
+		1BAD842B16C746FC008A3F1A /* LBDCreateGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBDCreateGroupViewController.m; sourceTree = "<group>"; };
 		1BBD35BE16C5A9CE00BB9ACF /* LBD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LBD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BBD35C116C5A9CE00BB9ACF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1BBD35C316C5A9CE00BB9ACF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -166,6 +175,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BAD842216C74099008A3F1A /* ImageDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				1BAD842316C74099008A3F1A /* WebImageOperations.h */,
+				1BAD842416C74099008A3F1A /* WebImageOperations.m */,
+			);
+			path = ImageDownloader;
+			sourceTree = "<group>";
+		};
+		1BAD842616C74109008A3F1A /* ImageScaling */ = {
+			isa = PBXGroup;
+			children = (
+				1BAD842716C74109008A3F1A /* UIImage+ProportionalFill.h */,
+				1BAD842816C74109008A3F1A /* UIImage+ProportionalFill.m */,
+			);
+			path = ImageScaling;
+			sourceTree = "<group>";
+		};
 		1BBD35B516C5A9CE00BB9ACF = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +352,7 @@
 		1BBD362916C5FB5A00BB9ACF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				1BAD842216C74099008A3F1A /* ImageDownloader */,
 				1BBD362A16C5FB5A00BB9ACF /* Login */,
 			);
 			path = Network;
@@ -342,6 +370,7 @@
 		1BBD362E16C5FD3000BB9ACF /* Extras */ = {
 			isa = PBXGroup;
 			children = (
+				1BAD842616C74109008A3F1A /* ImageScaling */,
 				1BBD363316C5FD5000BB9ACF /* JSON */,
 				1BBD362F16C5FD3000BB9ACF /* HUD */,
 			);
@@ -399,6 +428,8 @@
 			children = (
 				1BBD364D16C6063B00BB9ACF /* LBDHomeViewController.h */,
 				1BBD364E16C6063B00BB9ACF /* LBDHomeViewController.m */,
+				1BAD842A16C746FC008A3F1A /* LBDCreateGroupViewController.h */,
+				1BAD842B16C746FC008A3F1A /* LBDCreateGroupViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -553,6 +584,9 @@
 				58F7BC8E16C646A10049141A /* iCarousel.m in Sources */,
 				58F7BC9316C648250049141A /* LBDCustomerViewController.m in Sources */,
 				58F7BCAC16C6BF800049141A /* LBDProductViewController.m in Sources */,
+				1BAD842516C74099008A3F1A /* WebImageOperations.m in Sources */,
+				1BAD842916C74109008A3F1A /* UIImage+ProportionalFill.m in Sources */,
+				1BAD842C16C746FC008A3F1A /* LBDCreateGroupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

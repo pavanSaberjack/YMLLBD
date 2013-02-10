@@ -229,7 +229,7 @@
 
 - (void)testApiCall
 {
-    NSURL *url = [NSURL URLWithString:@"http://api.linkedin.com/v1/people/~:(id,first-name,last-name,headline,picture-url,positions)"];
+    NSURL *url = [NSURL URLWithString:@"http://api.linkedin.com/v1/people/~:(id,first-name,last-name,headline,picture-url,positions,group-memberships)"];
     OAMutableURLRequest *request =
     [[OAMutableURLRequest alloc] initWithURL:url
                                     consumer:consumer
@@ -252,6 +252,7 @@
     NSString *responseBody = [[NSString alloc] initWithData:data
                                                    encoding:NSUTF8StringEncoding];
     
+    //NSLog(@"res - %@", responseBody);
     [self setUserFromUserInfo:[responseBody JSONValue]];
     [responseBody release];
     
@@ -294,10 +295,23 @@
     [user setUserName:[info objectForKey:@"firstName"]];
     [user setEmail:@""];
     [user setUserId:[info objectForKey:@"id"]];
+    NSMutableArray *ownedCompanies = [NSMutableArray array];
+    NSArray *allCompanies = [[info objectForKey:@"positions"] objectForKey:@"values"];
+    for(NSDictionary *eachCompany in allCompanies)
+    {
+        if([[eachCompany objectForKey:@"title"] isEqualToString:@"ADMIN"])
+        {
+            [ownedCompanies addObject:[eachCompany objectForKey:@"company"]];
+        }
+    }
+    
     [user setExtras:[NSDictionary dictionaryWithObjects:
                      [NSArray arrayWithObjects:[info objectForKey:@"pictureUrl"],
-                      [info  objectForKey:@"headline"],[info objectForKey:@"lastName"],nil]
-                                                forKeys:[NSArray arrayWithObjects:@"pictureURL", @"headline",@"lastName",nil]]];
+                      [info  objectForKey:@"headline"],
+                      [info objectForKey:@"lastName"],
+                      ownedCompanies,
+                      nil]
+                                                forKeys:[NSArray arrayWithObjects:@"pictureURL", @"headline",@"lastName", @"companies",nil]]];
     
     //NS: save the user in NSUserDefaults
     [[NSUserDefaults standardUserDefaults] setObject:info forKey:@"linkedInUser"];
