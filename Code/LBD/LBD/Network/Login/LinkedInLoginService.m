@@ -289,7 +289,7 @@
 -(void)setUserFromUserInfo:(NSDictionary *)info
 {
     NSLog(@"info is:%@",info);
-    user = [[LBDUser alloc] init];
+    user = [LBDUser currentUser];
     [user setServiceName:@"LinkedIn"];
     [user setAuthToken:self.accessToken.key];
     [user setUserName:[info objectForKey:@"firstName"]];
