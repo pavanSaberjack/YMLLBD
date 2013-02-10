@@ -83,9 +83,9 @@
 
 - (void)addTheCarouselToCell:(id)carouselView
 {
-    CGRect frame = ((UIView *)carouselView).frame;
-    frame.origin.y = 220;
-    [carouselView setFrame:frame];
+//    CGRect frame = ((UIView *)carouselView).frame;
+//    frame.origin.y = 220;
+//    [carouselView setFrame:frame];
     
 //    [carouselView setAlpha:1.0f];
     [self.contentView addSubview:carouselView];
@@ -93,7 +93,7 @@
 
 - (void)removeCarousel:(id)carouselView
 {
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.1 animations:^{
 //        [carouselView setAlpha:0.0f];
         [carouselView removeFromSuperview];
     } completion:^(BOOL finished) {
