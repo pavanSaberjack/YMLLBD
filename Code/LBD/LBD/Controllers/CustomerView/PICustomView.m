@@ -175,7 +175,7 @@
         [cell createTheViewWith:array];
     }
     
-    [cell createTheViewWith:@[@"",@"",@""]];
+//    [cell createTheViewWith:@[@"",@"",@""]];
     
     // use NUMBER of components Value get array and send for creation
     

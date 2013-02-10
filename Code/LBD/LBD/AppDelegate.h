@@ -16,4 +16,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic, retain) UIImage *storedImg;
+
 @end

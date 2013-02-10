@@ -10,6 +10,8 @@
 
 @implementation PICustomButton
 
+@synthesize pID;
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
