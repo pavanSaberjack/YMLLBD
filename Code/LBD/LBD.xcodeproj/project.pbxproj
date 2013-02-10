@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1796D3B216C72A7600A91849 /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1796D3A616C72A7600A91849 /* AudioStreamer.m */; };
+		1796D3B416C72A7600A91849 /* TwilioDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1796D3B116C72A7600A91849 /* TwilioDataSource.m */; };
+		1796D3B616C72A9200A91849 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796D3B516C72A9200A91849 /* CFNetwork.framework */; };
+		1796D3B816C72A9900A91849 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796D3B716C72A9900A91849 /* CoreAudio.framework */; };
+		1796D3BA16C72AAB00A91849 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796D3B916C72AAB00A91849 /* AVFoundation.framework */; };
+		1796D3BC16C72AB300A91849 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796D3BB16C72AB300A91849 /* SystemConfiguration.framework */; };
+		1796D3C516C72B3400A91849 /* libTwilioClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796D3C416C72B3400A91849 /* libTwilioClient.a */; };
+		1796D3C716C72C6C00A91849 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1796D3C616C72C6C00A91849 /* AudioToolbox.framework */; };
 		1BBD35C216C5A9CE00BB9ACF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBD35C116C5A9CE00BB9ACF /* UIKit.framework */; };
 		1BBD35C416C5A9CE00BB9ACF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBD35C316C5A9CE00BB9ACF /* Foundation.framework */; };
 		1BBD35C616C5A9CE00BB9ACF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BBD35C516C5A9CE00BB9ACF /* CoreGraphics.framework */; };
@@ -101,6 +109,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1796D3A516C72A7600A91849 /* AudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioStreamer.h; path = Twilio/AudioStreamer.h; sourceTree = "<group>"; };
+		1796D3A616C72A7600A91849 /* AudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioStreamer.m; path = Twilio/AudioStreamer.m; sourceTree = "<group>"; };
+		1796D3B016C72A7600A91849 /* TwilioDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwilioDataSource.h; path = Twilio/TwilioDataSource.h; sourceTree = "<group>"; };
+		1796D3B116C72A7600A91849 /* TwilioDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwilioDataSource.m; path = Twilio/TwilioDataSource.m; sourceTree = "<group>"; };
+		1796D3B516C72A9200A91849 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1796D3B716C72A9900A91849 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		1796D3B916C72AAB00A91849 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1796D3BB16C72AB300A91849 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1796D3BE16C72B3400A91849 /* TCConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCConnection.h; sourceTree = "<group>"; };
+		1796D3BF16C72B3400A91849 /* TCConnectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCConnectionDelegate.h; sourceTree = "<group>"; };
+		1796D3C016C72B3400A91849 /* TCDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCDevice.h; sourceTree = "<group>"; };
+		1796D3C116C72B3400A91849 /* TCDeviceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCDeviceDelegate.h; sourceTree = "<group>"; };
+		1796D3C216C72B3400A91849 /* TCPresenceEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPresenceEvent.h; sourceTree = "<group>"; };
+		1796D3C316C72B3400A91849 /* TwilioClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwilioClient.h; sourceTree = "<group>"; };
+		1796D3C416C72B3400A91849 /* libTwilioClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTwilioClient.a; path = Twilio/libTwilioClient.a; sourceTree = "<group>"; };
+		1796D3C616C72C6C00A91849 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1BBD35BE16C5A9CE00BB9ACF /* LBD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LBD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BBD35C116C5A9CE00BB9ACF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1BBD35C316C5A9CE00BB9ACF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -244,16 +268,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1796D3C716C72C6C00A91849 /* AudioToolbox.framework in Frameworks */,
+				1796D3BC16C72AB300A91849 /* SystemConfiguration.framework in Frameworks */,
+				1796D3BA16C72AAB00A91849 /* AVFoundation.framework in Frameworks */,
+				1796D3B816C72A9900A91849 /* CoreAudio.framework in Frameworks */,
+				1796D3B616C72A9200A91849 /* CFNetwork.framework in Frameworks */,
 				58F7BC9016C646CD0049141A /* QuartzCore.framework in Frameworks */,
 				1BBD35C216C5A9CE00BB9ACF /* UIKit.framework in Frameworks */,
 				1BBD35C416C5A9CE00BB9ACF /* Foundation.framework in Frameworks */,
 				1BBD35C616C5A9CE00BB9ACF /* CoreGraphics.framework in Frameworks */,
+				1796D3C516C72B3400A91849 /* libTwilioClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1796D3A416C729C800A91849 /* Twilio */ = {
+			isa = PBXGroup;
+			children = (
+				1796D3BD16C72B3400A91849 /* Headers */,
+				1796D3C416C72B3400A91849 /* libTwilioClient.a */,
+				1796D3A516C72A7600A91849 /* AudioStreamer.h */,
+				1796D3A616C72A7600A91849 /* AudioStreamer.m */,
+				1796D3B016C72A7600A91849 /* TwilioDataSource.h */,
+				1796D3B116C72A7600A91849 /* TwilioDataSource.m */,
+			);
+			name = Twilio;
+			sourceTree = "<group>";
+		};
+		1796D3BD16C72B3400A91849 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				1796D3BE16C72B3400A91849 /* TCConnection.h */,
+				1796D3BF16C72B3400A91849 /* TCConnectionDelegate.h */,
+				1796D3C016C72B3400A91849 /* TCDevice.h */,
+				1796D3C116C72B3400A91849 /* TCDeviceDelegate.h */,
+				1796D3C216C72B3400A91849 /* TCPresenceEvent.h */,
+				1796D3C316C72B3400A91849 /* TwilioClient.h */,
+			);
+			name = Headers;
+			path = Twilio/Headers;
+			sourceTree = "<group>";
+		};
 		1BBD35B516C5A9CE00BB9ACF = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +331,11 @@
 		1BBD35C016C5A9CE00BB9ACF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1796D3C616C72C6C00A91849 /* AudioToolbox.framework */,
+				1796D3BB16C72AB300A91849 /* SystemConfiguration.framework */,
+				1796D3B916C72AAB00A91849 /* AVFoundation.framework */,
+				1796D3B716C72A9900A91849 /* CoreAudio.framework */,
+				1796D3B516C72A9200A91849 /* CFNetwork.framework */,
 				58F7BC8F16C646CD0049141A /* QuartzCore.framework */,
 				1BBD35C116C5A9CE00BB9ACF /* UIKit.framework */,
 				1BBD35C316C5A9CE00BB9ACF /* Foundation.framework */,
@@ -285,6 +347,7 @@
 		1BBD35C716C5A9CE00BB9ACF /* LBD */ = {
 			isa = PBXGroup;
 			children = (
+				1796D3A416C729C800A91849 /* Twilio */,
 				1BBD364716C5FDBA00BB9ACF /* Model */,
 				1BBD362E16C5FD3000BB9ACF /* Extras */,
 				1BBD362916C5FB5A00BB9ACF /* Network */,
@@ -767,6 +830,8 @@
 				58F7BC8E16C646A10049141A /* iCarousel.m in Sources */,
 				58F7BC9316C648250049141A /* LBDCustomerViewController.m in Sources */,
 				58F7BCAC16C6BF800049141A /* LBDProductViewController.m in Sources */,
+				1796D3B216C72A7600A91849 /* AudioStreamer.m in Sources */,
+				1796D3B416C72A7600A91849 /* TwilioDataSource.m in Sources */,
 				58F7BCB316C71EB40049141A /* ActUtility.m in Sources */,
 				58F7BCB616C720B80049141A /* LBDCustomPopUpView.m in Sources */,
 			);
@@ -857,6 +922,11 @@
 				GCC_PREFIX_HEADER = "LBD/LBD-Prefix.pch";
 				INFOPLIST_FILE = "LBD/LBD-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/LBD/Twilio/Twilio\"",
+					"\"$(SRCROOT)/LBD/Twilio\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "522E7C75-D530-4F90-8C06-4223179F31CE";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "522E7C75-D530-4F90-8C06-4223179F31CE";
@@ -873,6 +943,11 @@
 				GCC_PREFIX_HEADER = "LBD/LBD-Prefix.pch";
 				INFOPLIST_FILE = "LBD/LBD-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/LBD/Twilio/Twilio\"",
+					"\"$(SRCROOT)/LBD/Twilio\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "522E7C75-D530-4F90-8C06-4223179F31CE";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "522E7C75-D530-4F90-8C06-4223179F31CE";
