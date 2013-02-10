@@ -20,6 +20,8 @@
     NSString *venderId, *productId;
     
     NSMutableArray *productImagesArray;
+    
+    NSMutableArray *pinsArray;
 }
 
 @property(nonatomic, strong)TwilioDataSource *datasource;
@@ -36,6 +38,7 @@
         // Custom initialization
         
         productImagesArray = [[NSMutableArray alloc] init];
+        pinsArray = [[NSMutableArray alloc] init];
         self.selectedImageId = -1;
     }
     return self;
@@ -85,6 +88,18 @@
         [tmpV setUserInteractionEnabled:YES];
         [mainScroll addSubview:tmpV];
         
+        
+        if (i == 3) {
+            UIButton *pinButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            [pinButton setFrame:CGRectMake(100, 200, 60, 60)];
+            [pinButton setBackgroundImage:[UIImage imageNamed:@"DrawingPin1_Blue.png"] forState:UIControlStateNormal];
+            [pinButton setBackgroundColor:[UIColor clearColor]];
+            [pinButton addTarget:self action:@selector(questionButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+            [tmpV addSubview:pinButton];
+        }
+            
+
+        
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)];
         [tapGesture setNumberOfTapsRequired:2];
         [tmpV addGestureRecognizer:tapGesture];
@@ -96,15 +111,15 @@
     
     [mainScroll setContentSize:CGSizeMake(1024, y)];
     
+    
+    
+    
+    //[mainScroll scrollRectToVisible:CGRectMake(0, 748*1-2*(40+logoImg.size.height), 1024, 748) animated:NO];
     UIImage *tmpImg = [UIImage imageNamed:@"Navvvv"];
     UIImageView *tmpView = [[UIImageView alloc] initWithFrame:CGRectMake(1668/2, 0, tmpImg.size.width, tmpImg.size.height)];
     [tmpView setImage:tmpImg];
     [tmpView setUserInteractionEnabled:YES];
-    [homebgView addSubview:tmpView];
-    [tmpView release];
     
-    
-    //[mainScroll scrollRectToVisible:CGRectMake(0, 748*1-2*(40+logoImg.size.height), 1024, 748) animated:NO];
     
     
     float w = tmpView.frame.size.width;
@@ -122,18 +137,37 @@
     for(int i=0; i<[productImagesArray count]; i++)
     {
         UIImage *tmpI = [UIImage imageNamed:[NSString stringWithFormat:@"side_%d", i%5]];
-        tmpS = [[UIImageView alloc] initWithFrame:CGRectMake(w/2-tmpI.size.width/2, (748/5)*i, tmpI.size.width, 136.0f)];
-        [tmpS setImage:tmpI];
+        tmpS = [[UIImageView alloc] initWithFrame:CGRectMake(w/2-tmpI.size.width/2, (748/5)*(i+2), tmpI.size.width, 136.0f)];
+        [tmpS setAlpha:0.5];
+//        [tmpS setImage:tmpI];
         [tmpS setContentMode:UIViewContentModeCenter];
-        [tmpS setBackgroundColor:[UIColor clearColor]];
+        [tmpS setBackgroundColor:[UIColor whiteColor]];
         [sideScroll addSubview:tmpS];
+        
+        CALayer *layer2 = [tmpS layer];
+        [layer2 setShadowOffset:CGSizeMake(0.0, 3.0)];
+        [layer2 setShadowColor:[UIColor colorWithRed:(150/255.f) green:(150/255.f) blue:(150/255.f) alpha:1.0].CGColor];
+        [layer2 setShadowRadius:3.0];
+        [layer2 setShadowOpacity:1.0];
+        
+        
         [tmpS release];
         ys=ys+748/5;
     }
-    [sideScroll setContentSize:CGSizeMake(w, ys)];
+    [sideScroll setContentSize:CGSizeMake(w, ys + 600)];
     
     [sideScroll scrollRectToVisible:CGRectMake(0, (748/5)*1, 1024, 748) animated:NO];
     
+    
+    [homebgView addSubview:tmpView];
+    [tmpView release];
+    
+//    UIImage *tmpImg1 = [UIImage imageNamed:@"Navvvv"];
+//    UIImageView *tmpView1 = [[UIImageView alloc] initWithFrame:CGRectMake(1668/2, 0, tmpImg1.size.width, tmpImg1.size.height)];
+//    [tmpView1 setImage:tmpImg1];
+//    [tmpView1 setUserInteractionEnabled:YES];
+//    [homebgView addSubview:tmpView1];
+//    [tmpView1 release];
 }
 
 - (void)tapped:(UIGestureRecognizer *)sender
@@ -153,6 +187,13 @@
     
 }
 
+- (void)questionButtonClicked
+{
+    // play question and answer
+    
+    
+}
+
 -(void)startInitialAnimaton
 {
     [self addScrolls];
@@ -162,6 +203,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    
+    [productImagesArray addObject:@""];
+    [productImagesArray addObject:@""];
+    [productImagesArray addObject:@""];
+    [productImagesArray addObject:@""];
+    [productImagesArray addObject:@""];
+    [productImagesArray addObject:@""];
+    [productImagesArray addObject:@""];
+    [productImagesArray addObject:@""];
     
     [self.view setBackgroundColor:[UIColor clearColor]];
 	// Do any additional setup after loading the view.
