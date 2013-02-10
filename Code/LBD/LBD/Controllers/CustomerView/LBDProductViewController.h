@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LBDProductViewController : UIViewController
-
+- (id)initWithVenderId:(NSString *)venderIdString WithProductId:(NSString *)productIdString;
 @end

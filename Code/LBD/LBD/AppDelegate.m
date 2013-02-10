@@ -33,8 +33,18 @@
     [self.window makeKeyAndVisible];
     
     [self setupAppearance];
-    
+    [self fetchLocation];
     return YES;
+}
+
+- (void)fetchLocation
+{
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [locationManager startUpdatingLocation];
 }
 
 - (void)setupAppearance;
@@ -73,6 +83,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - CLlocation delegate
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    [manager stopUpdatingLocation];
+    NSLog(@"OldLocation %f %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
+    NSLog(@"NewLocation %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
 }
 
 @end

@@ -258,14 +258,22 @@
 {
     // Call the product view from here
     
-    [self.delegate productSelectedAtIndexPath:selectedIndex withVendorIndex:(selectedComponent-1000) withProductIndex:productIndex];
+//    id vendor = vendorsArray[(3*selectedIndex) + (selectedComponent-1000)];
+    
+//    id product = vender[productIndex].id;
+    
+    [self.delegate productSelectedAtIndexPath:selectedIndex withVendorIndex:@"" withProductIndex:@""];
 }
 
 #pragma mark - Button clicked methods
 - (void)buttonClicked:(UIButton *)sender
 {
-    NSLog(@"selected product is at %d for component %d at row %d", sender.tag - 2000, selectedComponent - 1000, selectedIndex);
+//    id vendor = vendorsArray[(3*selectedIndex) + (selectedComponent-1000)];
     
-    [self.delegate productSelectedAtIndexPath:selectedIndex withVendorIndex:(selectedComponent-1000) withProductIndex:sender.tag - 2000];
+//     id product = vender[sender.tag - 2000].id;
+    
+    [self.delegate productSelectedAtIndexPath:selectedIndex withVendorIndex:@"" withProductIndex:@""];
+    
+//    [self.delegate productSelectedAtIndexPath:selectedIndex withVendorIndex:(selectedComponent-1000) withProductIndex:sender.tag - 2000];
 }
 @end

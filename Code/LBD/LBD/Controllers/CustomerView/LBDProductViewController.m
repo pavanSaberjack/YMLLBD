@@ -17,6 +17,10 @@
     UIScrollView *mainScroll, *sideScroll;
     UIImageView *logoView, *homebgView;
 
+    
+    NSString *venderId, *productId;
+    
+    NSMutableArray *productImagesArray;
 }
 
 @property(nonatomic, strong)TwilioDataSource *datasource;
@@ -32,8 +36,22 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        productImagesArray = [[NSMutableArray alloc] init];
         self.selectedImageId = -1;
     }
+    return self;
+}
+
+- (id)initWithVenderId:(NSString *)venderIdString WithProductId:(NSString *)productIdString
+{
+    self = [super init];
+    if (self) {
+        //
+        venderId = venderIdString;
+        productId = productIdString;
+    }
+    
     return self;
 }
 
@@ -59,7 +77,7 @@
     
     UIImageView *tmpV=nil;
     float y=0;
-    for(int i=0; i<100; i++)
+    for(int i=0; i<[productImagesArray count]; i++)
     {
         tmpV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 748*i, 1024, 748)];
         [tmpV setImage:[UIImage imageNamed:[NSString stringWithFormat:@"v%d", i%5]]];
@@ -103,7 +121,7 @@
     
     UIImageView *tmpS=nil;
     float ys=0;
-    for(int i=0; i<100; i++)
+    for(int i=0; i<[productImagesArray count]; i++)
     {
         UIImage *tmpI = [UIImage imageNamed:[NSString stringWithFormat:@"side_%d", i%5]];
         tmpS = [[UIImageView alloc] initWithFrame:CGRectMake(w/2-tmpI.size.width/2, (748/5)*i, tmpI.size.width, 136.0f)];

@@ -9,6 +9,9 @@
 #import "LBDCustomerViewController.h"
 #import "PICustomView.h"
 #import "LBDProductViewController.h"
+#import "JSON.h"
+#import "APIManager.h"
+#import "MBProgressHUD.h"
 
 @interface LBDCustomerViewController ()<PICustomViewDelegate, UITextFieldDelegate>
 {
@@ -18,6 +21,7 @@
     BOOL timerON;
     
     UITextField *searchTextField;
+    APIManager *apiManager;
 }
 @end
 
@@ -31,6 +35,7 @@
     if (self) {
         // Custom initialization
         searchStr = [[NSMutableString alloc] initWithString:@""];
+        apiManager = [[APIManager alloc] init];
     }
     return self;
 }
@@ -57,7 +62,7 @@
     [searchTextField setBorderStyle:UITextBorderStyleRoundedRect];
     [searchTextField setAutocorrectionType:UITextAutocorrectionTypeNo];
     [searchTextField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
-    [searchTextField setReturnKeyType:UIReturnKeyDone];
+    [searchTextField setReturnKeyType:UIReturnKeySearch];
     [searchTextField setTextColor:[UIColor grayColor]];
     [searchTextField setText:@" search for something..."];
     [self.view addSubview:searchTextField];
@@ -83,11 +88,14 @@
 }
 
 #pragma mark - PICustomViewDelegate methods
-- (void)productSelectedAtIndexPath:(NSUInteger)rowIndex withVendorIndex:(NSUInteger)verdorIndex withProductIndex:(NSUInteger)productIndex
+- (void)productSelectedAtIndexPath:(NSUInteger)rowIndex withVendorIndex:(NSString *)verdorIndex withProductIndex:(NSString *)productIndex
 {
-    NSLog(@"%d, %d, %d",rowIndex, verdorIndex, productIndex);
+//    NSLog(@"%d, %d, %d",rowIndex, verdorIndex, productIndex);
+//    
+//    
+//    id vender = (3 * rowIndex) + verdorIndex;
     
-    LBDProductViewController *productView = [[LBDProductViewController alloc] init];
+    LBDProductViewController *productView = [[LBDProductViewController alloc] initWithVenderId:@"" WithProductId:@""];
     [self.navigationController pushViewController:productView animated:YES];
     [productView release];
 }
@@ -96,6 +104,7 @@
 {
     self.title = nil;
     [searchStr release];
+    [apiManager release];
     [super dealloc];
 }
 
@@ -162,6 +171,38 @@
 {
     NSLog(@"Search - %@", searchStr);
     timerON = FALSE;
+
+    [MBProgressHUD showDimmedHUDAddedTo:self.view animated:YES];
+    [apiManager fetchResultsFor:searchStr withCallback:^(BOOL success, id result){
+       
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        if(success)
+        {
+            NSLog(@"SEACRH SUCCESS - %@", result);
+        }
+        else
+        {
+            NSLog(@"FAILURE - %@", result);
+        }
+    }];
+    
+//    NSData *postData = [[NSString stringWithFormat:@"data=%@",[dict JSONRepresentation]] dataUsingEncoding:NSUTF8StringEncoding];    
+//    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+//    
+//    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+//    [request setURL:[NSURL URLWithString:@"http://192.168.1.94:3000/products/get.json"]];
+//    [request setHTTPMethod:@"POST"];
+//    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+//    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+//    [request setHTTPBody:postData];
+//    
+//    NSURLResponse *response;
+//    NSError *err;
+//    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+//    //NSString *responseString = [[NSString alloc] initWithFormat:@"%@", responseData];    
+//    
+//    NSString* Resp = [[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]autorelease];
+//    NSLog(@"SEARCH: %@", [Resp JSONValue]);
 }
 
 @end
