@@ -11,6 +11,8 @@
 
 @implementation AppDelegate
 
+@synthesize storedImg;
+
 - (void)dealloc
 {
     [_window release];

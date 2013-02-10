@@ -22,6 +22,8 @@
     
     UITextField *searchTextField;
     APIManager *apiManager;
+    
+    PICustomView *customView;
 }
 @end
 
@@ -68,7 +70,7 @@
     [self.view addSubview:searchTextField];
     [searchTextField release];
 
-    PICustomView *customView = [[PICustomView alloc] initWithFrame:CGRectMake(0.0, 52.0, self.view.frame.size.height, self.view.frame.size.height)];
+    customView = [[PICustomView alloc] initWithFrame:CGRectMake(0.0, 52.0, self.view.frame.size.height, self.view.frame.size.height)];
     [customView setDelegate:self];
     [self.view addSubview:customView];
     [customView release];
@@ -178,31 +180,15 @@
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if(success)
         {
-            NSLog(@"SEACRH SUCCESS - %@", result);
+            NSLog(@"SEACRH SUCCESS - %@", [result objectForKey:@"products"]);
+            
+            [customView reloadTheViewWithVendorsArray:[result objectForKey:@"products"]];
         }
         else
         {
             NSLog(@"FAILURE - %@", result);
         }
-    }];
-    
-//    NSData *postData = [[NSString stringWithFormat:@"data=%@",[dict JSONRepresentation]] dataUsingEncoding:NSUTF8StringEncoding];    
-//    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-//    
-//    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
-//    [request setURL:[NSURL URLWithString:@"http://192.168.1.94:3000/products/get.json"]];
-//    [request setHTTPMethod:@"POST"];
-//    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-//    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//    [request setHTTPBody:postData];
-//    
-//    NSURLResponse *response;
-//    NSError *err;
-//    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-//    //NSString *responseString = [[NSString alloc] initWithFormat:@"%@", responseData];    
-//    
-//    NSString* Resp = [[[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]autorelease];
-//    NSLog(@"SEARCH: %@", [Resp JSONValue]);
+    }];    
 }
 
 @end
